@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introducción a R</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="generator" content="pandoc" />
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" media="all" href="libs/ioslides-13.5.1/fonts/fonts.css">
+
+  <link rel="stylesheet" media="all" href="libs/ioslides-13.5.1/theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="libs/ioslides-13.5.1/theme/css/phone.css">
+
+  <base target="_blank">
+
+  <script type="text/javascript">
+    var SLIDE_CONFIG = {
+      // Slide settings
+      settings: {
+                title: 'Introducción a <strong>R</strong>',
+                        useBuilds: true,
+        usePrettify: true,
+        enableSlideAreas: true,
+        enableTouch: true,
+                favIcon: 'r-intro_files/logo.png',
+              },
+
+      // Author information
+      presenters: [
+            {
+        name:  'Daniel Moreno' ,
+        company: '',
+        gplus: '',
+        twitter: '',
+        www: '',
+        github: ''
+      },
+            ]
+    };
+  </script>
+
+  <style type="text/css">
+
+    b, strong {
+      font-weight: bold;
+    }
+
+    em {
+      font-style: italic;
+    }
+
+    slides > slide {
+      -webkit-transition: all 0.4s ease-in-out;
+      -moz-transition: all 0.4s ease-in-out;
+      -o-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .auto-fadein {
+      -webkit-transition: opacity 0.6s ease-in;
+      -webkit-transition-delay: 0.4s;
+      -moz-transition: opacity 0.6s ease-in 0.4s;
+      -o-transition: opacity 0.6s ease-in 0.4s;
+      transition: opacity 0.6s ease-in 0.4s;
+      opacity: 0;
+    }
+
+    slides > slide:not(.nobackground):before {
+      font-size: 12pt;
+      content: "";
+      position: absolute;
+      bottom: 20px;
+      left: 60px;
+      background: url(r-intro_files/logo.png) no-repeat 0 50%;
+      -webkit-background-size: 30px 30px;
+      -moz-background-size: 30px 30px;
+      -o-background-size: 30px 30px;
+      background-size: 30px 30px;
+      padding-left: 40px;
+      height: 30px;
+      line-height: 1.9;
+    }
+  </style>
+
+
+
+</head>
+
+<body style="opacity: 0">
+
+<slides>
+
+  <slide class="title-slide segue nobackground">
+        <aside class="gdbar"><img src="r-intro_files/logo.png"></aside>
+        <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+          </hgroup>
+  </slide>
+
+<slide class=''><hgroup><h2><a href='http://www.r-project.org/about.html' title=''>Que es R?</a></h2></hgroup><article  id="que-es-r">
+
+<blockquote>
+<p><em>&quot;R is a language and environment for statistical computing and graphics.&quot;</em></p>
+</blockquote>
+
+<p>Entre otras cosas R incluye:</p>
+
+<ul class = 'build'>
+<li>capicidad para almacenar y manipular datos <strong>efectivamente</strong></li>
+<li>un conjunto de operadores para hacer calculos sobre arreglos, particularmente matrices</li>
+<li>una colección grande, <strong>coherente</strong> e integrada de herramientas para el analisis de datos</li>
+<li>instalaciones gráficas para el análisis y visualización de datos, tanto en pantalla como en impreso.</li>
+<li>un lenguaje de programación bien desarrollado, <strong>simple y eficaz</strong></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Que es R?</h2></hgroup><article  id="que-es-r-1">
+
+<p>Un poco más en realidad:</p>
+
+<ul class = 'build'>
+<li>Una gran comunidad mundial</li>
+<li>El laboratorio de <strong>muchos</strong> estadísticos y &quot;cientificos de datos&quot;.</li>
+<li>El principal medio para el desarrollo y la <a href='http://journal.r-project.org/' title=''>divulgación</a> de tecnicas estadísticas y de analisís de datos de vanguardia.</li>
+<li>Jhon Chambers, miembro del equipo de R y co-autor de S, el lenguaje del cual se deriva R, lo describe (basado en el origen de S) como una <a href='https://www.youtube.com/watch?v=_hcpuRB5nGs' title=''><strong>interfaz</strong></a>: un portal a todo tipo de herramientas/algoritmos.</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup">
+
+<p>La pagina principal de R es <a href='www.r-project.org' title=''>r-project.org</a>.</p>
+
+<p>Hay instaladores para Windows y MacOS disponibles. R hace parte de varias distribuciones de Linux y se puede instalar facilmente con los manejadores de paquetes.</p>
+
+<p>Basicamente lo primero que aparece en el <em>Comprehensive R Archive Network</em> (CRAN): <a href='www.cran.r-project.org' title=''>cran.r-project.org</a></p>
+
+<p>En Mac tambíen se puede instalar R con <a href='https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme' title=''>brew</a> (recomendado):</p>
+
+<pre >    brew install homebrew/science/r</pre>
+
+</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-1">
+
+<p>Usar R puede ser frustrante.</p>
+
+<p>Interfaces -&gt; RStudio</p>
+
+</article></slide><slide class=''><hgroup><h2>Ayuda y Documentación</h2></hgroup><article  id="ayuda-y-documentacion">
+
+<p>CRAN</p>
+
+<p>Manual Introductorio</p>
+
+<p>Task Views</p>
+
+<p>Canales: #rstats StackOverflow</p>
+
+<p>Referencias: Advanced R, Springer R Series</p>
+
+</article></slide><slide class=''><hgroup><h2>Hola Mundo!</h2></hgroup><article  id="hola-mundo">
+
+<pre class = 'prettyprint lang-r'>x &lt;- 2 + 2
+print(x)</pre>
+
+<pre >## [1] 4</pre></article></slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script src="libs/ioslides-13.5.1/js/modernizr.custom.45394.js"></script>
+<script src="libs/ioslides-13.5.1/js/prettify/prettify.js"></script>
+<script src="libs/ioslides-13.5.1/js/prettify/lang-r.js"></script>
+<script src="libs/ioslides-13.5.1/js/prettify/lang-yaml.js"></script>
+<script src="libs/ioslides-13.5.1/js/hammer.js"></script>
+<script src="libs/ioslides-13.5.1/js/slide-controller.js"></script>
+<script src="libs/ioslides-13.5.1/js/slide-deck.js"></script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!-- map slide visiblity events into shiny -->
+<script>
+  (function() {
+    if (window.jQuery) {
+       window.jQuery(document).on('slideleave', function(e) {
+         window.jQuery(e.target).trigger('hidden');
+      });
+       window.jQuery(document).on('slideenter', function(e) {
+         window.jQuery(e.target).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

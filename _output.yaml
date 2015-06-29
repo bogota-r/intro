@@ -1,0 +1,5 @@
+ioslides_presentation:
+  self_contained: false
+  lib_dir: libs
+  incremental: yes
+  logo: "r-intro_files/logo.png"
