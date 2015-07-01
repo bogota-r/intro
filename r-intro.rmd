@@ -40,14 +40,14 @@ Un poco más en realidad:
 
 ## Setup {.build}
 
-La página principal de R es [r-project.org](www.r-project.org). 
+La página principal de R es [r-project.org](http://www.r-project.org). 
 
 Hay instaladores para Windows y MacOS disponibles. R hace parte de varias
 distribuciones de Linux y se puede instalar fácilmente con los manejadores de
 paquetes.
 
 Básicamente lo primero que aparece en el *Comprehensive R Archive Network* 
-(CRAN): [cran.r-project.org](www.cran.r-project.org) 
+(CRAN): [cran.r-project.org](http://www.cran.r-project.org) 
 
 En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme)
 (recomendado):
