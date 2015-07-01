@@ -3,43 +3,43 @@ title: "Introducción a **R**"
 author: Daniel Moreno
 ---
 
-## [Que es R?](http://www.r-project.org/about.html)
+## [Qué es R?](http://www.r-project.org/about.html)
 
 > *"R is a language and environment for statistical computing and graphics."*
 
 Entre otras cosas R incluye: 
   
   - capicidad para almacenar y manipular datos **efectivamente**
-  - un conjunto de operadores para hacer calculos sobre arreglos, particularmente matrices
-  - una colección grande, **coherente** e integrada de herramientas para el analisis de datos
-  - instalaciones gráficas para el análisis y visualización de datos, tanto en pantalla como en impreso.
+  - un conjunto de operadores para hacer cálculos sobre arreglos, particularmente matrices
+  - una colección grande, **coherente** e integrada de herramientas para el análisis de datos
+  - dispositivos gráficos para el análisis y visualización de datos, tanto en pantalla como en impreso
   - un lenguaje de programación bien desarrollado, **simple y eficaz**
 
-## Que es R?
+## Qué es R?
 
 Un poco más en realidad:
 
 - Una gran comunidad mundial
-- El laboratorio de **muchos** estadísticos y "cientificos de datos".
+- El laboratorio de **muchos** estadísticos y "científicos de datos".
 - El principal medio para el desarrollo y la [divulgación](http://journal.r-project.org/)
-  de tecnicas estadísticas y de analisís de datos de vanguardia.
+  de técnicas estadísticas y de análisis de datos de vanguardia.
 - Jhon Chambers, miembro del equipo de R y co-autor de S, el lenguaje del cual se
-  deriva R, lo describe (basado en el origen de S) como una 
+  deriva R, lo describe como una 
   [**interfaz**](https://www.youtube.com/watch?v=_hcpuRB5nGs): un portal a todo
   tipo de herramientas/algoritmos.
 
 ## Setup
 
-La pagina principal de R es [r-project.org](www.r-project.org). 
+La página principal de R es [r-project.org](www.r-project.org). 
 
 Hay instaladores para Windows y MacOS disponibles. R hace parte de varias
-distribuciones de Linux y se puede instalar facilmente con los manejadores de
+distribuciones de Linux y se puede instalar fácilmente con los manejadores de
 paquetes.
 
-Basicamente lo primero que aparece en el *Comprehensive R Archive Network* 
+Básicamente lo primero que aparece en el *Comprehensive R Archive Network* 
 (CRAN): [cran.r-project.org](www.cran.r-project.org) 
 
-En Mac tambíen se puede instalar R con [brew](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme)
+En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homebrew/tree/master/share/doc/homebrew#readme)
 (recomendado):
 
         brew install homebrew/science/r
