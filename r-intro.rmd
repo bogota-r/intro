@@ -28,7 +28,7 @@ Un poco más en realidad:
   [**interfaz**](https://www.youtube.com/watch?v=_hcpuRB5nGs): un portal a todo
   tipo de herramientas/algoritmos.
 
-## Setup
+## Setup {.build}
 
 La página principal de R es [r-project.org](www.r-project.org). 
 
