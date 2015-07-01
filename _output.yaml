@@ -4,3 +4,4 @@ ioslides_presentation:
   lib_dir: libs
   incremental: yes
   logo: "r-intro_files/logo.png"
+  css: styles.css
