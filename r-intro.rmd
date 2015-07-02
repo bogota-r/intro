@@ -19,7 +19,7 @@ author: Daniel Moreno
 
 Entre otras cosas R incluye: 
   
-  - capicidad para almacenar y manipular datos **efectivamente**
+  - capacidad para almacenar y manipular datos **efectivamente**
   - un conjunto de operadores para hacer cálculos sobre arreglos, particularmente matrices
   - una colección grande, **coherente** e integrada de herramientas para el análisis de datos
   - dispositivos gráficos para el análisis y visualización de datos, tanto en pantalla como en impreso
