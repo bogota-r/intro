@@ -5,12 +5,12 @@ author: Daniel Moreno
 
 ## **Qué es R?**
 
-### *The most powerfull and most widely used statistical software*
+### **El software estadístico más poderoso y usado en el mundo**
 
 <br>
 
 <div class="videowrapper">
-  <iframe src="https://www.youtube.com/embed/TR2bHSJ_eck?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/TR2bHSJ_eck?cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## [Qué es R?](http://www.r-project.org/about.html)
