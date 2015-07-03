@@ -79,3 +79,7 @@ Referencias: Advanced R, Springer R Series
 x <- 2 + 2
 print(x)
 ```
+
+## Diapositiva
+
+**Esto es una prueba**
