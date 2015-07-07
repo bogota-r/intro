@@ -29,7 +29,7 @@ Entre otras cosas R incluye:
 
 Un poco más en realidad:
 
-- Una gran comunidad mundial
+- Una gran comunidad mundial.
 - El laboratorio de **muchos** estadísticos y "científicos de datos".
 - El principal medio para el desarrollo y la [divulgación](http://journal.r-project.org/)
   de técnicas estadísticas y de análisis de datos de vanguardia.
@@ -54,34 +54,87 @@ En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homeb
 
         brew install homebrew/science/r
 
-## Setup
-
-Usar R puede ser frustrante. Interfaces -> RStudio
+## Empezando con R {.build}
 
 <div class="videowrapper">
   <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
 
+## Setup {.build}
 
-## Ayuda y Documentación
+Si! Aprender a usar R puede ser (muy) frustrante.
 
-CRAN
+Interfaces:
 
-Manual Introductorio
+- En Windows y Mac R viene con un GUI
+- IDE: [RStudio](www.rstudio.com)
+- R Commander [Rcmdr](http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/)
+  un GUI para R con funcionalidades estadísticas basicas.
 
-Task Views
+Igualmente Emacs y Vim tienen plugins:
 
-Canales: #rstats StackOverflow
+- [Emacs Speaks Statistics](http://ess.r-project.org)
+- [Vim-R-Plugin](http://www.vim.org/scripts/script.php?script_id=2628)
 
-Referencias: Advanced R, Springer R Series
+## Ayuda para empezar {.build}
 
-## Hola Mundo!
+Por donde empezar? Desde R:
 
-```{r}
-x <- 2 + 2
-print(x)
+```{r eval = FALSE}
+help.start()
 ```
 
-## Diapositiva
+o desde RStudio en _Help_ o simplemente desde el [CRAN](http://www.cran.r-project.org) llegamos al [Manual Introductorio](http://cran.rstudio.org/doc/manuals/r-release/R-intro.pdf).
 
-**Esto es una prueba**
+Este manual se encuentra [en español](http://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf) en la sección de [documentación contribuida](http://cran.r-project.org/other-docs.html) donde hay **mucho** material.
+
+## Hola Mundo! {.build .left-margin}
+
+```{r}
+"Hola mundo!"
+# Esto es un comentario
+
+y <- 2 + 2         # Asignación
+y^y / 10*pi + 1    # Expresión
+matrix(1, nrow = y, ncol = y)
+```
+
+## Rudimentos del lenguaje {.build}
+
+Usamos `<-` (o `=`) para _asignar_ y `#` para iniciar un comentario.
+
+```{r eval = FALSE}
+y <- 2 + 2    # Asignación
+```
+
+`matrix()` es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por omisión).
+
+```{r eval = FALSE}
+matrix(data = 1, y, y)
+```
+
+## Estructuras de datos
+
+## Clases y atributos
+
+## El ubicuo `data.frame`
+
+## Algo de vocabulario
+
+## {.flexbox .vcenter}
+
+![](./r-intro_files/waitwhat.jpeg)
+
+## Ayuda para ir más allá {.build}
+
+En el [CRAN](http://www.cran.r-project.org) hay una [_Vista de Tareas_](http://cran.r-project.org/web/views/) que sobrevuela paquetes, funciones y referencias para completar tareas especificas agrupadas tematicamente.
+
+Canales: [en twitter #rstats](https://twitter.com/hashtag/rstats) y en [StackOverflow el tag R](http://stackoverflow.com/questions/tagged/r). Tambien pueden [googlea-R](https://www.google.com.co/#q=R) R + "pregunta".  
+
+Algunas buenas referencias:
+
+- [Advanced R](http://adv-r.had.co.nz/) 
+- [The R Inferno](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) un viaje dantesco por R
+- [Springer - Use R Series](http://www.springer.com/series/6991?detailsPage=titles) R en la practica en diferentes contextos.
+- ...
+
