@@ -109,7 +109,9 @@
           </hgroup>
   </slide>
 
-<slide class=''><hgroup><h2><strong>Qué es R?</strong></h2></hgroup><article  id="que-es-r">
+<slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2><strong>Qué es R?</strong></h2></hgroup><article  id="que-es-r">
+
+</article></slide><slide class=''><hgroup><h2><strong>Qué es R?</strong></h2></hgroup><article  id="que-es-r-1">
 
 <h3><strong>El software estadístico más poderoso y usado en el mundo</strong></h3>
 
@@ -118,7 +120,7 @@
 <div class="videowrapper">
 <iframe src="https://www.youtube.com/embed/NZPHiYP7I24?cc_load_policy=1&cc_lang_pref=es" frameborder="0" allowfullscreen></iframe></div>
 
-</article></slide><slide class=''><hgroup><h2><a href='http://www.r-project.org/about.html' title=''>Qué es R?</a></h2></hgroup><article  id="que-es-r-1">
+</article></slide><slide class=''><hgroup><h2><a href='http://www.r-project.org/about.html' title=''>Qué es R?</a></h2></hgroup><article  id="que-es-r-2">
 
 <blockquote>
 <p><em>&quot;R is a language and environment for statistical computing and graphics.&quot;</em></p>
@@ -134,18 +136,20 @@
 <li>un lenguaje de programación bien desarrollado, <strong>simple y eficaz</strong></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Qué es R?</h2></hgroup><article  id="que-es-r-2">
+</article></slide><slide class=''><hgroup><h2>Qué es R?</h2></hgroup><article  id="que-es-r-3">
 
 <p>Un poco más en realidad:</p>
 
 <ul class = 'build'>
-<li>Una gran comunidad mundial</li>
+<li>Una gran comunidad mundial.</li>
 <li>El laboratorio de <strong>muchos</strong> estadísticos y &quot;científicos de datos&quot;.</li>
 <li>El principal medio para el desarrollo y la <a href='http://journal.r-project.org/' title=''>divulgación</a> de técnicas estadísticas y de análisis de datos de vanguardia.</li>
 <li>Jhon Chambers, miembro del equipo de R y co-autor de S, el lenguaje del cual se deriva R, lo describe como una <a href='https://www.youtube.com/watch?v=_hcpuRB5nGs' title=''><strong>interfaz</strong></a>: un portal a todo tipo de herramientas/algoritmos.</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup" class="build">
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Setup</h2></hgroup><article  id="setup">
+
+</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-1" class="build">
 
 <p>La página principal de R es <a href='http://www.r-project.org' title=''>r-project.org</a>.</p>
 
@@ -157,35 +161,104 @@
 
 <pre >    brew install homebrew/science/r</pre>
 
-</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-1">
-
-<p>Usar R puede ser frustrante. Interfaces -&gt; RStudio</p>
+</article></slide><slide class=''><hgroup><h2>Empezando con R</h2></hgroup><article  id="empezando-con-r" class="build">
 
 <div class="videowrapper">
 <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-</article></slide><slide class=''><hgroup><h2>Ayuda y Documentación</h2></hgroup><article  id="ayuda-y-documentacion">
+</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-2" class="build">
 
-<p>CRAN</p>
+<p>Si! Aprender a usar R puede ser (muy) frustrante.</p>
 
-<p>Manual Introductorio</p>
+<p>Interfaces:</p>
 
-<p>Task Views</p>
+<ul class = 'build'>
+<li>En Windows y Mac R viene con un GUI</li>
+<li>IDE: <a href='www.rstudio.com' title=''>RStudio</a></li>
+<li>R Commander <a href='http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/' title=''>Rcmdr</a> un GUI para R con funcionalidades estadísticas basicas.</li>
+</ul>
 
-<p>Canales: #rstats StackOverflow</p>
+<p>Igualmente Emacs y Vim tienen plugins:</p>
 
-<p>Referencias: Advanced R, Springer R Series</p>
+<ul class = 'build'>
+<li><a href='http://ess.r-project.org' title=''>Emacs Speaks Statistics</a></li>
+<li><a href='http://www.vim.org/scripts/script.php?script_id=2628' title=''>Vim-R-Plugin</a></li>
+</ul>
 
-</article></slide><slide class=''><hgroup><h2>Hola Mundo!</h2></hgroup><article  id="hola-mundo">
+</article></slide><slide class=''><hgroup><h2>Ayuda para empezar</h2></hgroup><article  id="ayuda-para-empezar" class="build">
 
-<pre class = 'prettyprint lang-r'>x &lt;- 2 + 2
-print(x)</pre>
+<p>Por donde empezar? Desde R:</p>
 
-<pre >## [1] 4</pre>
+<pre class = 'prettyprint lang-r'>help.start()</pre>
 
-</article></slide><slide class=''><hgroup><h2>Diapositiva</h2></hgroup><article  id="diapositiva">
+<p>o desde RStudio en <em>Help</em> o simplemente desde el <a href='http://www.cran.r-project.org' title=''>CRAN</a> llegamos al <a href='http://cran.rstudio.org/doc/manuals/r-release/R-intro.pdf' title=''>Manual Introductorio</a>.</p>
 
-<p><strong>Esto es una prueba</strong></p></article></slide>
+<p>Este manual se encuentra <a href='http://cran.r-project.org/doc/contrib/R-intro-1.1.0-espanol.1.pdf' title=''>en español</a> en la sección de <a href='http://cran.r-project.org/other-docs.html' title=''>documentación contribuida</a> donde hay <strong>mucho</strong> material.</p>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>El lenguaje</h2></hgroup><article  id="el-lenguaje">
+
+</article></slide><slide class=''><hgroup><h2>Hola Mundo!</h2></hgroup><article  id="hola-mundo" class="build left-margin">
+
+<pre class = 'prettyprint lang-r'>&quot;Hola mundo!&quot;</pre>
+
+<pre >## [1] &quot;Hola mundo!&quot;</pre>
+
+<pre class = 'prettyprint lang-r'># Esto es un comentario
+
+y &lt;- 2 + 2         # Asignación
+y^y / 10*pi + 1    # Expresión</pre>
+
+<pre >## [1] 81.42477</pre>
+
+<pre class = 'prettyprint lang-r'>matrix(1, nrow = y, ncol = y)</pre>
+
+<pre >##      [,1] [,2] [,3] [,4]
+## [1,]    1    1    1    1
+## [2,]    1    1    1    1
+## [3,]    1    1    1    1
+## [4,]    1    1    1    1</pre>
+
+</article></slide><slide class=''><hgroup><h2>Rudimentos del lenguaje</h2></hgroup><article  id="rudimentos-del-lenguaje" class="build">
+
+<p>Usamos <code>&lt;-</code> (o <code>=</code>) para <em>asignar</em> y <code>#</code> para iniciar un comentario.</p>
+
+<pre class = 'prettyprint lang-r'>y &lt;- 2 + 2    # Asignación</pre>
+
+<p><code>matrix()</code> es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por omisión).</p>
+
+<pre class = 'prettyprint lang-r'>matrix(data = 1, y, y)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos">
+
+</article></slide><slide class=''><hgroup><h2>Clases y atributos</h2></hgroup><article  id="clases-y-atributos">
+
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code>data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame">
+
+</article></slide><slide class=''><hgroup><h2>Algo de vocabulario</h2></hgroup><article  id="algo-de-vocabulario">
+
+</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section" class="flexbox vcenter">
+
+<img src='r-intro_files/waitwhat.jpeg' title=''/>
+
+</article></slide><slide class=''><hgroup><h2>Ayuda para ir más allá</h2></hgroup><article  id="ayuda-para-ir-mas-alla" class="build">
+
+<p>En el <a href='http://www.cran.r-project.org' title=''>CRAN</a> hay una <a href='http://cran.r-project.org/web/views/' title=''><em>Vista de Tareas</em></a> que sobrevuela paquetes, funciones y referencias para completar tareas especificas agrupadas tematicamente.</p>
+
+<p>Canales: <a href='https://twitter.com/hashtag/rstats' title=''>en twitter #rstats</a> y en <a href='http://stackoverflow.com/questions/tagged/r' title=''>StackOverflow el tag R</a>. Tambien pueden <a href='https://www.google.com.co/#q=R' title=''>googlea-R</a> R + &quot;pregunta&quot;.</p>
+
+<p>Algunas buenas referencias:</p>
+
+<ul class = 'build'>
+<li><a href='http://www.statmethods.net/' title=''>Quick R</a></li>
+<li><a href='http://adv-r.had.co.nz/' title=''>Advanced R</a></li>
+<li><a href='http://www.burns-stat.com/pages/Tutor/R_inferno.pdf' title=''>The R Inferno</a> un viaje dantesco por R</li>
+<li><a href='http://www.springer.com/series/6991?detailsPage=titles' title=''>Springer - Use R Series</a> R en la practica en diferentes contextos.</li>
+<li>&#8230;</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Colofón</h2></hgroup><article  id="colofon" class="smaller">
+
+<p>Esta presentación fue escrita en RMarkdown desde RStudio y compilada por <code>rmarkdown</code> gracias a <code>knitr</code> y <code>pandoc</code>. Publicada en la web en GitHub gracias a GitHub Pages. Para compilarla solo es necesario clonar el repositorio y correr <code>make</code> o desde R <code>system(&quot;make&quot;)</code>.</p></article></slide>
 
 
   <slide class="backdrop"></slide>
