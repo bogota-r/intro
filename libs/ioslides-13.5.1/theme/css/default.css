@@ -333,7 +333,7 @@ slides > slide.backdrop:after, slides > slide.backdrop:before {
 }
 /* line 180, ../scss/default.scss */
 slides > slide > hgroup + article {
-  margin-top: 45px;
+  margin-top: 15px;
 }
 /* line 184, ../scss/default.scss */
 slides > slide > hgroup + article.flexbox.vcenter, slides > slide > hgroup + article.flexbox.vleft, slides > slide > hgroup + article.flexbox.vright {
@@ -527,7 +527,7 @@ pre {
   line-height: 28px;
   padding: 10px 0 10px 60px;
   letter-spacing: -1px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 106%;
   left: -60px;
   position: relative;

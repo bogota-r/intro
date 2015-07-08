@@ -197,7 +197,7 @@
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>El lenguaje</h2></hgroup><article  id="el-lenguaje">
 
-</article></slide><slide class=''><hgroup><h2>Hola Mundo!</h2></hgroup><article  id="hola-mundo" class="build left-margin">
+</article></slide><slide class=''><hgroup><h2>Hola Mundo!</h2></hgroup><article  id="hola-mundo" class="build">
 
 <pre class = 'prettyprint lang-r'>&quot;Hola mundo!&quot;</pre>
 
@@ -226,7 +226,13 @@ y^y / 10*pi + 1    # Expresión</pre>
 
 <pre class = 'prettyprint lang-r'>matrix(data = 1, y/2, y)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos">
+<p>Para explorar un objeto o variable usamos <code>str</code> (<em>e</em><strong>str</strong><em>uctura</em>)</p>
+
+<pre class = 'prettyprint lang-r'>str(matrix(data = 1, y/2, y))</pre>
+
+<pre >##  num [1:2, 1:4] 1 1 1 1 1 1 1 1</pre>
+
+</article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos" class="build left-margin">
 
 <h3>Vectores atomicos</h3>
 
@@ -238,7 +244,15 @@ caracter &lt;- c(&quot;Hola&quot;, &quot;mundo&quot;, &quot;!&quot;)</pre>
 <h3>Vectores recursivos</h3>
 
 <pre class = 'prettyprint lang-r'>recursivo &lt;- list(id = c(1, 2, 3), categoria = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
-                  l = list(c(1, 2), TRUE, c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)))</pre>
+                  l = list(c(1, 2), TRUE))
+str(recursivo)</pre>
+
+<pre >## List of 3
+##  $ id       : num [1:3] 1 2 3
+##  $ categoria: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+##  $ l        :List of 2
+##   ..$ : num [1:2] 1 2
+##   ..$ : logi TRUE</pre>
 
 </article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos-1">
 
@@ -265,7 +279,9 @@ caracter &lt;- c(&quot;Hola&quot;, &quot;mundo&quot;, &quot;!&quot;)</pre>
 </tr>
 </table>
 
-</article></slide><slide class=''><hgroup><h2>Clases y atributos</h2></hgroup><article  id="clases-y-atributos">
+</article></slide><slide class=''><hgroup><h2>Propiedades, atributos y clases</h2></hgroup><article  id="propiedades-atributos-y-clases">
+
+<h3>Propiedades de los vectores</h3>
 
 <pre class = 'prettyprint lang-r'>## Las tres propiedades principales
 typeof(logico)</pre>
@@ -281,7 +297,48 @@ typeof(logico)</pre>
 <pre >## $names
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
-</article></slide><slide class=''><hgroup><h2>El ubicuo <code>data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame">
+</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos">
+
+<h3>Tipos, pruebas y coreción</h3>
+
+<pre class = 'prettyprint lang-r'># Las funciones is.* y as.*  logical, integer, double, character, list
+is.character(caracter)</pre>
+
+<pre >## [1] TRUE</pre>
+
+<pre class = 'prettyprint lang-r'>as.integer(logico)</pre>
+
+<pre >## [1] 1 0 1</pre>
+
+<pre class = 'prettyprint lang-r'># Coerción por defecto:
+mean(logico)</pre>
+
+<pre >## [1] 0.6666667</pre>
+
+</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos-1">
+
+<h3>Atributos</h3>
+
+<pre class = 'prettyprint lang-r'>str(attributes(doble))</pre>
+
+<pre >## List of 1
+##  $ names: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>class(doble)</pre>
+
+<pre >## [1] &quot;numeric&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>names(doble)</pre>
+
+<pre >## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>dim(doble)</pre>
+
+<pre >## NULL</pre>
+
+</article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos">
+
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code class="build">data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame">
 
 <p>Es la estructura de datos más utilizada en R.</p>
 
@@ -300,7 +357,7 @@ typeof(logico)</pre>
 
 <pre >## [1] 2</pre>
 
-</article></slide><slide class=''><hgroup><h2>El ubicuo <code>data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame-1">
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code class="build">data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame-1">
 
 <p>Se pueden combinar dos o más <code>data.frame</code>s con las funciones <code>rbind()</code> y <code>cbind()</code></p>
 

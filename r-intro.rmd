@@ -94,7 +94,7 @@ Este manual se encuentra [en español](http://cran.r-project.org/doc/contrib/R-i
 
 # El lenguaje
 
-## Hola Mundo! {.build .left-margin}
+## Hola Mundo! {.build}
 
 ```{r}
 "Hola mundo!"
@@ -119,7 +119,12 @@ y <- 2 + 2    # Asignación
 matrix(data = 1, y/2, y)
 ```
 
-## Estructuras de datos 
+Para explorar un objeto o variable usamos `str` (_e_**str**_uctura_)
+```{r}
+str(matrix(data = 1, y/2, y))
+```
+
+## Estructuras de datos {.build .left-margin}
 
 ### Vectores atomicos
 
@@ -134,7 +139,8 @@ caracter <- c("Hola", "mundo", "!")
 
 ```{r}
 recursivo <- list(id = c(1, 2, 3), categoria = c("a", "b", "c"),
-                  l = list(c(1, 2), TRUE, c("a", "b", "c")))
+                  l = list(c(1, 2), TRUE))
+str(recursivo)
 ```
 
 ## Estructuras de datos
@@ -145,7 +151,9 @@ recursivo <- list(id = c(1, 2, 3), categoria = c("a", "b", "c"),
 |2                | Matriz (`matrix`)           | `data.frame`           |  
 |3 o más          | Arreglo (`array`)           |                        |
 
-## Clases y atributos
+## Propiedades, atributos y clases  
+
+### Propiedades de los vectores
 
 ```{r}
 ## Las tres propiedades principales
@@ -154,7 +162,36 @@ length(entero)
 attributes(doble)
 ```
 
-## El ubicuo `data.frame`
+## Propiedades, clases y atributos
+
+### Tipos, pruebas y coreción
+
+```{r}
+# Las funciones is.* y as.*  logical, integer, double, character, list
+is.character(caracter)
+as.integer(logico)
+
+# Coerción por defecto:
+mean(logico)
+```
+
+## Propiedades, clases y atributos
+
+### Atributos
+
+```{r}
+str(attributes(doble))
+```
+
+```{r}
+class(doble)
+names(doble)
+dim(doble)
+```
+
+## Matrices y arreglos
+
+## El ubicuo `data.frame` {.build}
 
 Es la estructura de datos más utilizada en R.
 
@@ -166,7 +203,7 @@ df[2, 2] #se pueden seleccionar como en las matrices
 df$y[2] #se pueden seleccionar como en las listas
 ```
 
-## El ubicuo `data.frame`
+## El ubicuo `data.frame` {.build}
 
 Se pueden combinar dos o más `data.frame`s con las funciones `rbind()` y `cbind()`
 
