@@ -66,7 +66,7 @@ En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homeb
 
 ## Setup {.build}
 
-Si! Aprender a usar R puede ser (muy) frustrante.
+Aprender a usar R puede ser (muy) frustrante.
 
 Interfaces:
 
@@ -139,11 +139,11 @@ recursivo <- list(id = c(1, 2, 3), categoria = c("a", "b", "c"),
 
 ## Estructuras de datos
 
-|    | Homogeneos     | Heterogeneos  |
-|----|----------------|---------------|
-| 1d | Vector atomico | Lista         |
-| 2d | Matriz         | Data frame    |
-| nd | Arreglo        |               |
+| **Dimensiones** | **Datos homogéneos**        | **Datos heterogéneos** | 
+|-----------------|-----------------------------|------------------------|
+|1                | Vector atómico (`vector`)   | Lista (`list`)         |
+|2                | Matriz (`matrix`)           | `data.frame`           |  
+|3 o más          | Arreglo (`array`)           |                        |
 
 ## Clases y atributos
 
@@ -155,6 +155,27 @@ attributes(doble)
 ```
 
 ## El ubicuo `data.frame`
+
+Es la estructura de datos más utilizada en R.
+
+```{r}
+(df <- data.frame(x = c("a", "b", "c"), y = 1:3))
+
+df[2, 2] #se pueden seleccionar como en las matrices
+
+df$y[2] #se pueden seleccionar como en las listas
+```
+
+## El ubicuo `data.frame`
+
+Se pueden combinar dos o más `data.frame`s con las funciones `rbind()` y `cbind()`
+
+```{r}
+df1 <- data.frame(x = c("a", "b"), y = 1:2)
+df2 <- data.frame(x = c("c", "d"), y = c(6,7))
+
+(df <- rbind(df1, df2))
+```
 
 ## Algo de vocabulario
 
