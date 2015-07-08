@@ -102,7 +102,7 @@ Este manual se encuentra [en español](http://cran.r-project.org/doc/contrib/R-i
 
 y <- 2 + 2         # Asignación
 y^y / 10*pi + 1    # Expresión
-matrix(1, nrow = y, ncol = y)
+matrix(1, nrow = y/2, ncol = y)
 ```
 
 ## Rudimentos del lenguaje {.build}
@@ -116,7 +116,7 @@ y <- 2 + 2    # Asignación
 `matrix()` es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por omisión).
 
 ```{r eval = FALSE}
-matrix(data = 1, y, y)
+matrix(data = 1, y/2, y)
 ```
 
 ## Estructuras de datos
