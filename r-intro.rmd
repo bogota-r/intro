@@ -113,15 +113,46 @@ Usamos `<-` (o `=`) para _asignar_ y `#` para iniciar un comentario.
 y <- 2 + 2    # Asignación
 ```
 
-`matrix()` es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por omisión).
+`matrix()` es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por **omisión**).
 
 ```{r eval = FALSE}
 matrix(data = 1, y/2, y)
 ```
 
+## Estructuras de datos 
+
+### Vectores atomicos
+
+```{r vectores}
+logico   <- c(TRUE, FALSE, T)
+entero   <- c(1L, 6L, 10L)
+doble    <- c(a = 1, b = 2.5, c = 4.5)
+caracter <- c("Hola", "mundo", "!")
+```
+
+### Vectores recursivos
+
+```{r}
+recursivo <- list(id = c(1, 2, 3), categoria = c("a", "b", "c"),
+                  l = list(c(1, 2), TRUE, c("a", "b", "c")))
+```
+
 ## Estructuras de datos
 
+|    | Homogeneos     | Heterogeneos  |
+|----|----------------|---------------|
+| 1d | Vector atomico | Lista         |
+| 2d | Matriz         | Data frame    |
+| nd | Arreglo        |               |
+
 ## Clases y atributos
+
+```{r}
+## Las tres propiedades principales
+typeof(logico)
+length(entero)
+attributes(doble)
+```
 
 ## El ubicuo `data.frame`
 
@@ -147,4 +178,4 @@ Algunas buenas referencias:
 
 ## Colofón {.smaller}
 
-Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages. Para compilarla solo es necesario clonar el repositorio y correr `make` o desde R `system("make")`.
+Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages. Para compilarla solo es necesario clonar el repositorio y correr `make` o desde R `system("make")`.
