@@ -311,7 +311,9 @@ La forma más comun de crearlo es con una variación de la función `read.table(
 `subset()` con el `data.frame`
 
 ```{r}
-# df[df$x == "a", "y"]
+df[df$x == "a", "y", drop = FALSE]
+
+# Mejor así:
 subset(df, subset = x == "a", select = y)
 ```
 
@@ -335,7 +337,7 @@ miFuncion <- function(arg_1, arg_2, ...){
 
 ## R moderno o el ["Hadleyverse"](https://barryrowlingson.github.io/hadleyverse/) {.build}
 
-- `readr` lectura de archivos.
+- `readr`, `readxl` y `haven` lectura de archivos.
 - `lubridate` manejo de fechas y tiempo.
 - `stringr` interface a `stringi` para manejo de caracteres.
 - `dplyr` y `tidyr` manipulación y limpieza de datos.
@@ -368,7 +370,7 @@ library(haven)
 saber <- read_spss("./data/saber2014II.sav")
 ```
 
-## Manipulacion
+## Manipulación
 
 ### Verbos de `dplyr`
 
@@ -380,7 +382,7 @@ saber <- read_spss("./data/saber2014II.sav")
 - `group_by()`
 - `*_join()`
 
-## Manipulacion {.build}
+## Manipulación {.build}
 
 
 Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.
@@ -401,7 +403,7 @@ resumen_a <- datos %>%
 resumen_a
 ```
 
-## Manipulacion {.build}
+## Manipulación {.build}
 
 Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?
 
