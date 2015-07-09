@@ -226,11 +226,13 @@ y^y / 10*pi + 1    # Expresión</pre>
 
 <pre class = 'prettyprint lang-r'>matrix(data = 1, y/2, y)</pre>
 
-<p>Para explorar un objeto o variable usamos <code>str</code> (<em>e</em><strong>str</strong><em>uctura</em>)</p>
+<p>Para explorar un objeto o variable usamos la funcion <code>str()</code> (<em>e</em><strong>str</strong><em>uctura</em>)</p>
 
 <pre class = 'prettyprint lang-r'>str(matrix(data = 1, y/2, y))</pre>
 
 <pre >##  num [1:2, 1:4] 1 1 1 1 1 1 1 1</pre>
+
+<p>Para ver la ayuda de una función la precedemos con un <code>?</code>.</p>
 
 </article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos" class="build left-margin">
 
@@ -243,15 +245,15 @@ caracter &lt;- c(&quot;Hola&quot;, &quot;mundo&quot;, &quot;!&quot;)</pre>
 
 <h3>Vectores recursivos</h3>
 
-<pre class = 'prettyprint lang-r'>recursivo &lt;- list(id = c(1, 2, 3), categoria = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
-                  l = list(c(1, 2), TRUE))
+<pre class = 'prettyprint lang-r'>recursivo &lt;- list(id = c(1, 2, 3), var = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;),
+                  lista = list(4:9, TRUE))
 str(recursivo)</pre>
 
 <pre >## List of 3
-##  $ id       : num [1:3] 1 2 3
-##  $ categoria: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
-##  $ l        :List of 2
-##   ..$ : num [1:2] 1 2
+##  $ id   : num [1:3] 1 2 3
+##  $ var  : chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+##  $ lista:List of 2
+##   ..$ : int [1:6] 4 5 6 7 8 9
 ##   ..$ : logi TRUE</pre>
 
 </article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos-1">
@@ -264,22 +266,22 @@ str(recursivo)</pre>
 </tr>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">Vector atómico (<code>vector</code>)</td>
-<td align="left">Lista (<code>list</code>)</td>
+<td align="left">Vector atómico - <code>vector()</code></td>
+<td align="left">Lista - <code>list()</code></td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="left">Matriz (<code>matrix</code>)</td>
-<td align="left"><code>data.frame</code></td>
+<td align="left">Matriz - <code>matrix()</code></td>
+<td align="left"><code>data.frame()</code></td>
 </tr>
 <tr class="odd">
 <td align="left">3 o más</td>
-<td align="left">Arreglo (<code>array</code>)</td>
+<td align="left">Arreglo - <code>array()</code></td>
 <td align="left"></td>
 </tr>
 </table>
 
-</article></slide><slide class=''><hgroup><h2>Propiedades, atributos y clases</h2></hgroup><article  id="propiedades-atributos-y-clases">
+</article></slide><slide class=''><hgroup><h2>Propiedades, atributos y clases</h2></hgroup><article  id="propiedades-atributos-y-clases" class="build">
 
 <h3>Propiedades de los vectores</h3>
 
@@ -297,7 +299,7 @@ typeof(logico)</pre>
 <pre >## $names
 ## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
-</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos">
+</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos" class="build">
 
 <h3>Tipos, pruebas y coreción</h3>
 
@@ -315,7 +317,7 @@ mean(logico)</pre>
 
 <pre >## [1] 0.6666667</pre>
 
-</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos-1">
+</article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos-1" class="build">
 
 <h3>Atributos</h3>
 
@@ -324,7 +326,7 @@ mean(logico)</pre>
 <pre >## List of 1
 ##  $ names: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
-<pre class = 'prettyprint lang-r'>class(doble)</pre>
+<pre class = 'prettyprint lang-r'>class(doble) # Se pueden modificar: class(doble) &lt;- &quot;myclass&quot;</pre>
 
 <pre >## [1] &quot;numeric&quot;</pre>
 
@@ -336,11 +338,160 @@ mean(logico)</pre>
 
 <pre >## NULL</pre>
 
-</article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos">
+</article></slide><slide class=''><hgroup><h2>Datos faltantes y factores</h2></hgroup><article  id="datos-faltantes-y-factores" class="build left-margin">
+
+<p>Hay una constante logica para especificar datos faltantes. La función <code>ìs.na()</code> evalua si hay datos faltantes.</p>
+
+<pre class = 'prettyprint lang-r'>NA # logico
+NA_integer_; NA_real_; NA_character_;</pre>
+
+<p>La clase factor se usa para representar variables categoricas.</p>
+
+<pre class = 'prettyprint lang-r'>categoria &lt;- factor(x = c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;))
+typeof(categoria)</pre>
+
+<pre >## [1] &quot;integer&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>attributes(categoria)</pre>
+
+<pre >## $levels
+## [1] &quot;A&quot; &quot;B&quot;
+## 
+## $class
+## [1] &quot;factor&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>table(categoria)</pre>
+
+<pre >## categoria
+## A B 
+## 3 2</pre>
+
+</article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos" class="build left-margin">
+
+<pre class = 'prettyprint lang-r'>matriz &lt;- matrix(data = runif(4), ncol = 2, nrow = 2)
+arreglo &lt;- array(data = rnorm(24), c(2, 3, 4))
+
+dim(caracter) &lt;- c(1, 3)
+caracter</pre>
+
+<pre >##      [,1]   [,2]    [,3]
+## [1,] &quot;Hola&quot; &quot;mundo&quot; &quot;!&quot;</pre>
+
+<pre class = 'prettyprint lang-r'>str(arreglo)</pre>
+
+<pre >##  num [1:2, 1:3, 1:4] 1.822 1.376 -0.816 -0.851 0.707 ...</pre>
+
+<pre class = 'prettyprint lang-r'>ncol(matriz); dim(arreglo)</pre>
+
+<pre >## [1] 2</pre>
+
+<pre >## [1] 2 3 4</pre>
+
+</article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos-1">
+
+<p>Algunas funciones:</p>
+
+<table class = 'rmdtable'>
+<tr class="header">
+<th align="left">Función</th>
+<th align="left">Vectores</th>
+<th align="left">Matrices</th>
+<th align="left">Arreglos</th>
+</tr>
+<tr class="odd">
+<td align="left">Dimensión</td>
+<td align="left"><code>length()</code></td>
+<td align="left"><code>ncol()</code> y <code>nrow()</code></td>
+<td align="left"><code>dim()</code></td>
+</tr>
+<tr class="even">
+<td align="left">Nombres</td>
+<td align="left"><code>names()</code></td>
+<td align="left"><code>rownames()</code> y <code>colnames()</code></td>
+<td align="left"><code>dimnames()</code></td>
+</tr>
+<tr class="odd">
+<td align="left">Concatenar</td>
+<td align="left"><code>c()</code></td>
+<td align="left"><code>cbind()</code> y <code>rbind()</code></td>
+<td align="left"><code>abind::abind()</code></td>
+</tr>
+</table>
+
+</article></slide><slide class=''><hgroup><h2>Subselección (indexación)</h2></hgroup><article  id="subseleccion-indexacion" class="build left-margin">
+
+<p>Para empezar el operador <code>[</code></p>
+
+<pre class = 'prettyprint lang-r'># Nada - util para más dimensiones
+doble[]</pre>
+
+<pre >##   a   b   c 
+## 1.0 2.5 4.5</pre>
+
+<pre class = 'prettyprint lang-r'># Entero positivo
+doble[c(1, 2)]</pre>
+
+<pre >##   a   b 
+## 1.0 2.5</pre>
+
+<pre class = 'prettyprint lang-r'># Entero negativo
+doble[-c(1, 2)]</pre>
+
+<pre >##   c 
+## 4.5</pre>
+
+</article></slide><slide class=''><hgroup><h2>Subselección (indexación)</h2></hgroup><article  id="subseleccion-indexacion-1" class="build">
+
+<pre class = 'prettyprint lang-r'># Logico
+doble[doble &gt; 1]</pre>
+
+<pre >##   b   c 
+## 2.5 4.5</pre>
+
+<pre class = 'prettyprint lang-r'># Caracter
+doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
+
+<pre >##   a   c   c 
+## 1.0 4.5 4.5</pre>
+
+<p>El operador <code>[</code> funciona igual en listas.</p>
+
+</article></slide><slide class=''><hgroup><h2>Subselección</h2></hgroup><article  id="subseleccion" class="build">
+
+<p>Ahora podemos combinar las anterirores formas de subindexar en matrices y arreglos, separando por coma.</p>
+
+<pre class = 'prettyprint lang-r'>matriz</pre>
+
+<pre >##           [,1]      [,2]
+## [1,] 0.8368071 0.9414267
+## [2,] 0.2450987 0.6047859</pre>
+
+<pre class = 'prettyprint lang-r'>matriz[, c(TRUE, FALSE)]</pre>
+
+<pre >## [1] 0.8368071 0.2450987</pre>
+
+<pre class = 'prettyprint lang-r'>matriz[1, , drop = FALSE]</pre>
+
+<pre >##           [,1]      [,2]
+## [1,] 0.8368071 0.9414267</pre>
+
+</article></slide><slide class=''><hgroup><h2>Subseleccion</h2></hgroup><article  id="subseleccion-1">
+
+<p>Hay dos operadores más para seleccionar. <code>[[</code> permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. <code>$</code> es un atajo para <code>[[</code> con un argumento caracter (nombres).</p>
+
+<p>Además esta la función <code>subset()</code> para seleccionar de forma más limpia con condiciones logicas.</p>
+
+<pre class = 'prettyprint lang-r'>recursivo[[1]]</pre>
+
+<pre >## [1] 1 2 3</pre>
+
+<pre class = 'prettyprint lang-r'>recursivo$lista[[1]][3:5]</pre>
+
+<pre >## [1] 6 7 8</pre>
 
 </article></slide><slide class=''><hgroup><h2>El ubicuo <code class="build">data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame">
 
-<p>Es la estructura de datos más utilizada en R.</p>
+<p>Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).</p>
 
 <pre class = 'prettyprint lang-r'>(df &lt;- data.frame(x = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), y = 1:3))</pre>
 
@@ -349,11 +500,11 @@ mean(logico)</pre>
 ## 2 b 2
 ## 3 c 3</pre>
 
-<pre class = 'prettyprint lang-r'>df[2, 2] #se pueden seleccionar como en las matrices</pre>
+<pre class = 'prettyprint lang-r'>df[2, 2] # Se pueden seleccionar como en las matrices</pre>
 
 <pre >## [1] 2</pre>
 
-<pre class = 'prettyprint lang-r'>df$y[2] #se pueden seleccionar como en las listas</pre>
+<pre class = 'prettyprint lang-r'>df$y[2] # Se pueden seleccionar como en las listas</pre>
 
 <pre >## [1] 2</pre>
 
@@ -362,7 +513,7 @@ mean(logico)</pre>
 <p>Se pueden combinar dos o más <code>data.frame</code>s con las funciones <code>rbind()</code> y <code>cbind()</code></p>
 
 <pre class = 'prettyprint lang-r'>df1 &lt;- data.frame(x = c(&quot;a&quot;, &quot;b&quot;), y = 1:2)
-df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6,7))
+df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6, 7))
 
 (df &lt;- rbind(df1, df2))</pre>
 
@@ -372,11 +523,23 @@ df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6,7))
 ## 3 c 6
 ## 4 d 7</pre>
 
-</article></slide><slide class=''><hgroup><h2>Algo de vocabulario</h2></hgroup><article  id="algo-de-vocabulario">
+<p>La forma más comun de crearlo es con una variación de la función <code>read.table()</code></p>
+
+</article></slide><slide class=''><hgroup><h2>Funciones</h2></hgroup><article  id="funciones">
+
+<p>Las funciones tambien son objetos. Las creamos así:</p>
+
+<pre class = 'prettyprint lang-r'>miFuncion &lt;- function(arg_1, arg_2, ...){
+  expresion ingeniosa o util
+}</pre>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2><a href='http://adv-r.had.co.nz/Vocabulary.html' title=''>Vocabulario</a></h2></hgroup><article  id="vocabulario">
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section" class="flexbox vcenter">
 
 <img src='r-intro_files/waitwhat.jpeg' title=''/>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Manipulación de datos con el R moderno</h2></hgroup><article  id="manipulacion-de-datos-con-el-r-moderno">
 
 </article></slide><slide class=''><hgroup><h2>Ayuda para ir más allá</h2></hgroup><article  id="ayuda-para-ir-mas-alla" class="build">
 
@@ -396,7 +559,7 @@ df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6,7))
 
 </article></slide><slide class=''><hgroup><h2>Colofón</h2></hgroup><article  id="colofon" class="smaller">
 
-<p>Esta presentación fue escrita en RMarkdown desde RStudio y compilada por <code>rmarkdown</code> en la plantilla <code>ioslides</code> de Google gracias a <code>knitr</code> y <code>pandoc</code>. Publicada en la web en GitHub gracias a GitHub Pages. Para compilarla solo es necesario clonar el repositorio y correr <code>make</code> o desde R <code>system(&quot;make&quot;)</code>.</p></article></slide>
+<p>Esta presentación fue escrita en RMarkdown desde RStudio y compilada por <code>rmarkdown</code> en la plantilla <code>ioslides</code> de Google gracias a <code>knitr</code> y <code>pandoc</code>. Publicada en la web en GitHub gracias a GitHub Pages.</p></article></slide>
 
 
   <slide class="backdrop"></slide>

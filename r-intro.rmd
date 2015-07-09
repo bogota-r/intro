@@ -119,10 +119,12 @@ y <- 2 + 2    # Asignación
 matrix(data = 1, y/2, y)
 ```
 
-Para explorar un objeto o variable usamos `str` (_e_**str**_uctura_)
+Para explorar un objeto o variable usamos la funcion `str()` (_e_**str**_uctura_)
 ```{r}
 str(matrix(data = 1, y/2, y))
 ```
+
+Para ver la ayuda de una función la precedemos con un `?`.
 
 ## Estructuras de datos {.build .left-margin}
 
@@ -138,20 +140,20 @@ caracter <- c("Hola", "mundo", "!")
 ### Vectores recursivos
 
 ```{r}
-recursivo <- list(id = c(1, 2, 3), categoria = c("a", "b", "c"),
-                  l = list(c(1, 2), TRUE))
+recursivo <- list(id = c(1, 2, 3), var = c("a", "b", "c"),
+                  lista = list(4:9, TRUE))
 str(recursivo)
 ```
 
 ## Estructuras de datos
 
-| **Dimensiones** | **Datos homogéneos**        | **Datos heterogéneos** | 
-|-----------------|-----------------------------|------------------------|
-|1                | Vector atómico (`vector`)   | Lista (`list`)         |
-|2                | Matriz (`matrix`)           | `data.frame`           |  
-|3 o más          | Arreglo (`array`)           |                        |
+| **Dimensiones** | **Datos homogéneos**          | **Datos heterogéneos** | 
+|-----------------|-------------------------------|------------------------|
+|1                | Vector atómico - `vector()`   | Lista - `list()`       |
+|2                | Matriz - `matrix()`           | `data.frame()`         |  
+|3 o más          | Arreglo - `array()`           |                        |
 
-## Propiedades, atributos y clases  
+## Propiedades, atributos y clases {.build}  
 
 ### Propiedades de los vectores
 
@@ -162,7 +164,7 @@ length(entero)
 attributes(doble)
 ```
 
-## Propiedades, clases y atributos
+## Propiedades, clases y atributos  {.build}
 
 ### Tipos, pruebas y coreción
 
@@ -175,32 +177,116 @@ as.integer(logico)
 mean(logico)
 ```
 
-## Propiedades, clases y atributos
+## Propiedades, clases y atributos {.build}
 
-### Atributos
+### Atributos {.build}
 
 ```{r}
 str(attributes(doble))
 ```
 
 ```{r}
-class(doble)
+class(doble) # Se pueden modificar: class(doble) <- "myclass"
 names(doble)
 dim(doble)
 ```
 
+## Datos faltantes y factores {.build .left-margin}
+
+Hay una constante logica para especificar datos faltantes. La función `ìs.na()` evalua si hay datos faltantes. 
+
+```{r, eval = FALSE}
+NA # logico
+NA_integer_; NA_real_; NA_character_;
+```
+
+La clase factor se usa para representar variables categoricas.
+
+```{r}
+categoria <- factor(x = c("A", "B", "A", "A", "B"))
+typeof(categoria)
+attributes(categoria)
+table(categoria)
+```
+
+## Matrices y arreglos {.build .left-margin}
+
+```{r}
+matriz <- matrix(data = runif(4), ncol = 2, nrow = 2)
+arreglo <- array(data = rnorm(24), c(2, 3, 4))
+
+dim(caracter) <- c(1, 3)
+caracter
+
+str(arreglo)
+ncol(matriz); dim(arreglo)
+```
+
 ## Matrices y arreglos
+
+Algunas funciones:
+
+Función    | Vectores      | Matrices                    | Arreglos         | 
+-----------|---------------|-----------------------------|------------------|
+Dimensión  | `length()`    | `ncol()` y `nrow()`         | `dim()`          |  
+Nombres    | `names()`     | `rownames()` y `colnames()` | `dimnames()`     |
+Concatenar | `c()`         | `cbind()` y `rbind()`       | `abind::abind()` |  
+
+## Subselección (indexación) {.build .left-margin}
+
+Para empezar el operador `[`
+
+```{r}
+# Nada - util para más dimensiones
+doble[]
+# Entero positivo
+doble[c(1, 2)]
+# Entero negativo
+doble[-c(1, 2)]
+```
+
+## Subselección (indexación) {.build}
+
+```{r}
+# Logico
+doble[doble > 1]
+# Caracter
+doble[c("a", "c", "c")]
+```
+
+El operador `[` funciona igual en listas.
+
+## Subselección {.build}
+
+Ahora podemos combinar las anterirores formas de subindexar en matrices y arreglos, separando por coma.
+
+```{r}
+matriz
+matriz[, c(TRUE, FALSE)]
+matriz[1, , drop = FALSE]
+```
+
+## Subseleccion 
+
+Hay dos operadores más para seleccionar. `[[` permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. `$` es un atajo para `[[` con un argumento caracter (nombres).
+
+Además esta la función `subset()` para seleccionar de forma más limpia con condiciones logicas.
+
+```{r}
+recursivo[[1]]
+recursivo$lista[[1]][3:5]
+```
 
 ## El ubicuo `data.frame` {.build}
 
-Es la estructura de datos más utilizada en R.
+Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).
 
 ```{r}
 (df <- data.frame(x = c("a", "b", "c"), y = 1:3))
 
-df[2, 2] #se pueden seleccionar como en las matrices
+df[2, 2] # Se pueden seleccionar como en las matrices
 
-df$y[2] #se pueden seleccionar como en las listas
+df$y[2] # Se pueden seleccionar como en las listas
 ```
 
 ## El ubicuo `data.frame` {.build}
@@ -209,16 +295,30 @@ Se pueden combinar dos o más `data.frame`s con las funciones `rbind()` y `cbind
 
 ```{r}
 df1 <- data.frame(x = c("a", "b"), y = 1:2)
-df2 <- data.frame(x = c("c", "d"), y = c(6,7))
+df2 <- data.frame(x = c("c", "d"), y = c(6, 7))
 
 (df <- rbind(df1, df2))
 ```
 
-## Algo de vocabulario
+La forma más comun de crearlo es con una variación de la función `read.table()` 
+
+## Funciones
+
+Las funciones tambien son objetos. Las creamos así:
+
+```r
+miFuncion <- function(arg_1, arg_2, ...){
+  expresion ingeniosa o util
+}
+```
+
+# [Vocabulario](http://adv-r.had.co.nz/Vocabulary.html)
 
 ## {.flexbox .vcenter}
 
 ![](./r-intro_files/waitwhat.jpeg)
+
+# Manipulación de datos con el R moderno
 
 ## Ayuda para ir más allá {.build}
 
@@ -236,4 +336,4 @@ Algunas buenas referencias:
 
 ## Colofón {.smaller}
 
-Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages. Para compilarla solo es necesario clonar el repositorio y correr `make` o desde R `system("make")`.
+Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages.
