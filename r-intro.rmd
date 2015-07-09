@@ -1,5 +1,5 @@
 ---
-title: "Introducción a **R**"
+title: "Introducción a R"
 ---
 
 ```{r setup, echo = FALSE}
