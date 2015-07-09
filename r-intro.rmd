@@ -35,7 +35,7 @@ Entre otras cosas R incluye:
 Un poco más en realidad:
 
 - Una gran comunidad mundial.
-- El laboratorio de **muchos** estadísticos y "científicos de datos".
+- El laboratorio de **muchos** estadísticos y científicos de datos.
 - El principal medio para el desarrollo y la [divulgación](http://journal.r-project.org/)
   de técnicas estadísticas y de análisis de datos de vanguardia.
 - Jhon Chambers, miembro del equipo de R y co-autor de S, el lenguaje del cual se
@@ -76,7 +76,7 @@ Interfaces:
 - En Windows y Mac R viene con un GUI
 - IDE: [RStudio](www.rstudio.com)
 - R Commander [Rcmdr](http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/)
-  un GUI para R con funcionalidades estadísticas basicas.
+  un GUI para R con funcionalidades estadísticas básicas.
 
 Igualmente Emacs y Vim tienen plugins:
 
@@ -85,7 +85,9 @@ Igualmente Emacs y Vim tienen plugins:
 
 ## Ayuda para empezar {.build}
 
-Por donde empezar? Desde R:
+Por dónde empezar?
+
+Desde R:
 
 ```{r eval = FALSE}
 help.start()
@@ -116,7 +118,7 @@ Usamos `<-` (o `=`) para _asignar_ y `#` para iniciar un comentario.
 y <- 2 + 2    # Asignación
 ```
 
-`matrix()` es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por **omisión**).
+`matrix()` es una función, entre paréntesis van sus argumentos (los podemos especificar por posición, por nombre o por **omisión**).
 
 ```{r eval = FALSE}
 matrix(data = 1, y/2, y)
@@ -131,7 +133,7 @@ Para ver la ayuda de una función la precedemos con un `?`.
 
 ## Estructuras de datos {.build .left-margin}
 
-### Vectores atomicos
+### Vectores atómicos
 
 ```{r vectores}
 logico   <- c(TRUE, FALSE, T)
@@ -196,14 +198,14 @@ dim(doble)
 
 ## Datos faltantes y factores {.build .left-margin}
 
-Hay una constante logica para especificar datos faltantes. La función `ìs.na()` evalua si hay datos faltantes. 
+Hay una constante lógica para especificar datos faltantes. La función `is.na()` evalua si hay datos faltantes. 
 
 ```{r, eval = FALSE}
 NA # logico
 NA_integer_; NA_real_; NA_character_;
 ```
 
-La clase factor se usa para representar variables categoricas.
+La clase factor se usa para representar variables categóricas.
 
 ```{r}
 categoria <- factor(x = c("A", "B", "A", "A", "B"))
@@ -240,7 +242,7 @@ Concatenar | `c()`         | `cbind()` y `rbind()`       | `abind::abind()` |
 Para empezar el operador `[`
 
 ```{r}
-# Nada - util para más dimensiones
+# Nada - útil para más dimensiones
 doble[]
 # Entero positivo
 doble[c(1, 2)]
@@ -251,7 +253,7 @@ doble[-c(1, 2)]
 ## Subselección (indexación) {.build}
 
 ```{r}
-# Logico
+# Lógico
 doble[doble > 1]
 # Caracter
 doble[c("a", "c", "c")]
@@ -269,11 +271,11 @@ matriz[, c(TRUE, FALSE)]
 matriz[1, , drop = FALSE]
 ```
 
-## Subseleccion {.build}
+## Subselección {.build}
 
-Hay dos operadores más para seleccionar. `[[` permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. `$` es un atajo para `[[` con un argumento caracter (nombres).
+Hay dos operadores más para seleccionar. `[[` permite seleccionar sólo un valor (entero positivo o caracter), pero los extrae de las listas. `$` es un atajo para `[[` con un argumento caracter (nombres).
 
-Además esta la función `subset()` para seleccionar de forma más limpia con condiciones logicas.
+Además esta la función `subset()` para seleccionar de forma más limpia con condiciones lógicas.
 
 ```{r}
 recursivo[[1]]
@@ -283,7 +285,8 @@ subset(recursivo, c(FALSE, TRUE, FALSE))
 
 ## El ubicuo <code> data.frame </code> {.build}
 
-Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).
+Es la estructura de datos más utilizada en R. 
+Es una lista de vectores atómicos (!?!).
 
 ```{r}
 (df <- data.frame(x = c("a", "b", "c"), y = 1:3))
@@ -304,7 +307,7 @@ df2 <- data.frame(x = c("c", "a"), y = c(6, 7))
 (df <- rbind(df1, df2))
 ```
 
-La forma más comun de crearlo es con una variación de la función `read.table()` 
+La forma más común de crearlo es con una variación de la función `read.table()` 
 
 ## El ubicuo <code> data.frame </code> {.build}
 
@@ -319,7 +322,7 @@ subset(df, subset = x == "a", select = y)
 
 ## Funciones {.build}
 
-Las funciones tambien son objetos. Las creamos así:
+Las funciones también son objetos. Las creamos así:
 
 ```r
 miFuncion <- function(arg_1, arg_2, ...){
@@ -329,7 +332,7 @@ miFuncion <- function(arg_1, arg_2, ...){
 
 ### En R:
 - todo lo que existe es un objeto 
-- todo lo que pasa es un llamado a una función"
+- todo lo que se pasa en la consola es un llamado a una función
 
 # [Vocabulario](http://adv-r.had.co.nz/Vocabulary.html)
 
@@ -341,9 +344,9 @@ miFuncion <- function(arg_1, arg_2, ...){
 - `lubridate` manejo de fechas y tiempo.
 - `stringr` interface a `stringi` para manejo de caracteres.
 - `dplyr` y `tidyr` manipulación y limpieza de datos.
-- `ggplot2` una gramatica de graficas.
+- `ggplot2` una gramática de gráficas.
 
-Recordemos que `ìnstall.packages()` instala paquetes y `library()` los carga en la sesión.
+Recordemos que `install.packages()` instala paquetes y `library()` los carga en la sesión.
 
 ## Importación
 
@@ -361,7 +364,7 @@ datos <- read.csv("./data/saber2014II.csv", sep = ";", dec=",", colClasses = cla
 library(readr)
 datos <- read_csv2("./data/saber2014II.csv")
 
-# Nuevo Paquete de Whickham para importar de excel
+# Nuevo Paquete de Whickham para importar de Excel
 library(readxl)
 saber <- read_excel("./data/saber2014II.xlsx")
 
@@ -384,8 +387,7 @@ saber <- read_spss("./data/saber2014II.sav")
 
 ## Manipulación {.build}
 
-
-Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.
+Pregunta: ¿cuántos estudiantes presentaron las pruebas Saber en el año 2014 por municipio?
 
 ```{r}
 library(dplyr)
@@ -405,7 +407,7 @@ resumen_a
 
 ## Manipulación {.build}
 
-Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?
+Pregunta: ¿cuál es el municipio de mejor desempeño del país en las pruebas saber?
 
 ```{r}
 resumen_b <- datos %>%
@@ -428,18 +430,18 @@ resumen_b
 
 ## Ayuda para ir más allá {.build}
 
-En el [CRAN](http://www.cran.r-project.org) hay una [_Vista de Tareas_](http://cran.r-project.org/web/views/) que sobrevuela paquetes, funciones y referencias para completar tareas especificas agrupadas tematicamente.
+En el [CRAN](http://www.cran.r-project.org) hay una [_Vista de Tareas_](http://cran.r-project.org/web/views/) que sobrevuela paquetes, funciones y referencias para completar tareas específicas agrupadas temáticamente.
 
-Canales: [en twitter #rstats](https://twitter.com/hashtag/rstats) y en [StackOverflow el tag R](http://stackoverflow.com/questions/tagged/r). Tambien pueden [googlea-R](https://www.google.com.co/#q=R) R + "pregunta".  
+Canales: [en twitter #rstats](https://twitter.com/hashtag/rstats) y en [StackOverflow el tag R](http://stackoverflow.com/questions/tagged/r). También pueden [googlea-R](https://www.google.com.co/#q=R) R + "pregunta".  
 
 Algunas buenas referencias:
 
 - [Quick R](http://www.statmethods.net/)
 - [Advanced R](http://adv-r.had.co.nz/) 
 - [The R Inferno](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf) un viaje dantesco por R
-- [Springer - Use R Series](http://www.springer.com/series/6991?detailsPage=titles) R en la practica en diferentes contextos.
+- [Springer - Use R Series](http://www.springer.com/series/6991?detailsPage=titles) R en la práctica en diferentes contextos.
 - ...
 
-## Colofón {.smaller}
+## Colofón {.smaller .left-margin}
 
 Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages.
