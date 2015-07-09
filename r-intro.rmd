@@ -1,7 +1,10 @@
 ---
 title: "Introducción a **R**"
-author: Daniel Moreno
 ---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(message = FALSE, comment = "#>")
+```
 
 # **Qué es R?**
 
@@ -64,7 +67,7 @@ En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homeb
   <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
 
-## Setup {.build}
+## Setup
 
 Aprender a usar R puede ser (muy) frustrante.
 
@@ -266,7 +269,7 @@ matriz[, c(TRUE, FALSE)]
 matriz[1, , drop = FALSE]
 ```
 
-## Subseleccion 
+## Subseleccion {.build}
 
 Hay dos operadores más para seleccionar. `[[` permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. `$` es un atajo para `[[` con un argumento caracter (nombres).
 
@@ -275,9 +278,10 @@ Además esta la función `subset()` para seleccionar de forma más limpia con co
 ```{r}
 recursivo[[1]]
 recursivo$lista[[1]][3:5]
+subset(recursivo, c(FALSE, TRUE, FALSE))
 ```
 
-## El ubicuo `data.frame` {.build}
+## El ubicuo <code> data.frame </code> {.build}
 
 Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).
 
@@ -289,20 +293,29 @@ df[2, 2] # Se pueden seleccionar como en las matrices
 df$y[2] # Se pueden seleccionar como en las listas
 ```
 
-## El ubicuo `data.frame` {.build}
+## El ubicuo <code> data.frame </code> {.build}
 
 Se pueden combinar dos o más `data.frame`s con las funciones `rbind()` y `cbind()`
 
 ```{r}
 df1 <- data.frame(x = c("a", "b"), y = 1:2)
-df2 <- data.frame(x = c("c", "d"), y = c(6, 7))
+df2 <- data.frame(x = c("c", "a"), y = c(6, 7))
 
 (df <- rbind(df1, df2))
 ```
 
 La forma más comun de crearlo es con una variación de la función `read.table()` 
 
-## Funciones
+## El ubicuo <code> data.frame </code> {.build}
+
+`subset()` con el `data.frame`
+
+```{r}
+# df[df$x == "a", "y"]
+subset(df, subset = x == "a", select = y)
+```
+
+## Funciones {.build}
 
 Las funciones tambien son objetos. Las creamos así:
 
@@ -312,13 +325,104 @@ miFuncion <- function(arg_1, arg_2, ...){
 }
 ```
 
+### En R:
+- todo lo que existe es un objeto 
+- todo lo que pasa es un llamado a una función"
+
 # [Vocabulario](http://adv-r.had.co.nz/Vocabulary.html)
 
-## {.flexbox .vcenter}
+# Manipulación de datos con R moderno
 
-![](./r-intro_files/waitwhat.jpeg)
+## R moderno o el ["Hadleyverse"](https://barryrowlingson.github.io/hadleyverse/) {.build}
 
-# Manipulación de datos con el R moderno
+- `readr` lectura de archivos.
+- `lubridate` manejo de fechas y tiempo.
+- `stringr` interface a `stringi` para manejo de caracteres.
+- `dplyr` y `tidyr` manipulación y limpieza de datos.
+- `ggplot2` una gramatica de graficas.
+
+Recordemos que `ìnstall.packages()` instala paquetes y `library()` los carga en la sesión.
+
+## Importación
+
+```{r, echo = TRUE}
+# Importar de un csv (Enfoque malo)
+dat <- read.csv("./data/saber2014II.csv", sep = ";", dec=",")
+# head(dat)
+
+# Importar de un csv (Enfoque correcto)
+clases <- c(rep("character", 8), rep("numeric", 8), rep("NULL", 7), "character")
+datos <- read.csv("./data/saber2014II.csv", sep = ";", dec=",", colClasses = clases)
+```
+
+```{r, eval = FALSE}
+library(readr)
+datos <- read_csv2("./data/saber2014II.csv")
+
+# Nuevo Paquete de Whickham para importar de excel
+library(readxl)
+saber <- read_excel("./data/saber2014II.xlsx")
+
+# Importar de SPSS con etiquetas
+library(haven)
+saber <- read_spss("./data/saber2014II.sav")
+```
+
+## Manipulacion
+
+### Verbos de `dplyr`
+
+- `filter()` 
+- `arrange()`
+- `select()`
+- `mutate()` y `transmute()`
+- `summarise()`
+- `group_by()`
+- `*_join()`
+
+## Manipulacion {.build}
+
+
+Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.
+
+```{r}
+library(dplyr)
+resumen_a <- datos %>%
+  group_by(NOMBREMUNICIPIO) %>%
+  summarize(DEPARTAMENTO = max(DEPARTAMENTO), TOTAL_EVALUADOS = sum(EVALUADOS)) %>%
+  arrange(desc(TOTAL_EVALUADOS)) %>%
+  mutate(ranking = row_number()) %>%
+  select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, TOTAL_EVALUADOS)
+```
+
+## Manipulación
+
+```{r}
+resumen_a
+```
+
+## Manipulacion {.build}
+
+Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?
+
+```{r}
+resumen_b <- datos %>%
+  mutate(PROMGLOBAL = (PROMMATEMATICA + PROMINGLES + PROMLECTURACRITICA + 
+                       PROMSOCIALESYCIUDADANAS +  PROMCIENCIASNATURALES + 
+                       PROMRAZONAMIENTOCUANTITA + PROMCOMPETENCIASCIUDADAN)/7) %>%
+  group_by(NOMBREMUNICIPIO) %>%
+  summarize(DEPARTAMENTO = max(DEPARTAMENTO), 
+            PROMGLOBALXMPIO = sum(PROMGLOBAL * EVALUADOS) / sum(EVALUADOS)) %>%
+  arrange(desc(PROMGLOBALXMPIO)) %>%
+  mutate(ranking = row_number()) %>%
+  select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, PROMGLOBALXMPIO) 
+```
+
+## Manipulación
+
+```{r}
+resumen_b
+```
 
 ## Ayuda para ir más allá {.build}
 

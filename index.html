@@ -35,14 +35,6 @@
 
       // Author information
       presenters: [
-            {
-        name:  'Daniel Moreno' ,
-        company: '',
-        gplus: '',
-        twitter: '',
-        www: '',
-        github: ''
-      },
             ]
     };
   </script>
@@ -166,7 +158,7 @@
 <div class="videowrapper">
 <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
 
-</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-2" class="build">
+</article></slide><slide class=''><hgroup><h2>Setup</h2></hgroup><article  id="setup-2">
 
 <p>Aprender a usar R puede ser (muy) frustrante.</p>
 
@@ -201,20 +193,20 @@
 
 <pre class = 'prettyprint lang-r'>&quot;Hola mundo!&quot;</pre>
 
-<pre >## [1] &quot;Hola mundo!&quot;</pre>
+<pre >#&gt; [1] &quot;Hola mundo!&quot;</pre>
 
 <pre class = 'prettyprint lang-r'># Esto es un comentario
 
 y &lt;- 2 + 2         # Asignación
 y^y / 10*pi + 1    # Expresión</pre>
 
-<pre >## [1] 81.42477</pre>
+<pre >#&gt; [1] 81.42477</pre>
 
 <pre class = 'prettyprint lang-r'>matrix(1, nrow = y/2, ncol = y)</pre>
 
-<pre >##      [,1] [,2] [,3] [,4]
-## [1,]    1    1    1    1
-## [2,]    1    1    1    1</pre>
+<pre >#&gt;      [,1] [,2] [,3] [,4]
+#&gt; [1,]    1    1    1    1
+#&gt; [2,]    1    1    1    1</pre>
 
 </article></slide><slide class=''><hgroup><h2>Rudimentos del lenguaje</h2></hgroup><article  id="rudimentos-del-lenguaje" class="build">
 
@@ -230,7 +222,7 @@ y^y / 10*pi + 1    # Expresión</pre>
 
 <pre class = 'prettyprint lang-r'>str(matrix(data = 1, y/2, y))</pre>
 
-<pre >##  num [1:2, 1:4] 1 1 1 1 1 1 1 1</pre>
+<pre >#&gt;  num [1:2, 1:4] 1 1 1 1 1 1 1 1</pre>
 
 <p>Para ver la ayuda de una función la precedemos con un <code>?</code>.</p>
 
@@ -249,12 +241,12 @@ caracter &lt;- c(&quot;Hola&quot;, &quot;mundo&quot;, &quot;!&quot;)</pre>
                   lista = list(4:9, TRUE))
 str(recursivo)</pre>
 
-<pre >## List of 3
-##  $ id   : num [1:3] 1 2 3
-##  $ var  : chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
-##  $ lista:List of 2
-##   ..$ : int [1:6] 4 5 6 7 8 9
-##   ..$ : logi TRUE</pre>
+<pre >#&gt; List of 3
+#&gt;  $ id   : num [1:3] 1 2 3
+#&gt;  $ var  : chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+#&gt;  $ lista:List of 2
+#&gt;   ..$ : int [1:6] 4 5 6 7 8 9
+#&gt;   ..$ : logi TRUE</pre>
 
 </article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos-1">
 
@@ -288,16 +280,16 @@ str(recursivo)</pre>
 <pre class = 'prettyprint lang-r'>## Las tres propiedades principales
 typeof(logico)</pre>
 
-<pre >## [1] &quot;logical&quot;</pre>
+<pre >#&gt; [1] &quot;logical&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>length(entero)</pre>
 
-<pre >## [1] 3</pre>
+<pre >#&gt; [1] 3</pre>
 
 <pre class = 'prettyprint lang-r'>attributes(doble)</pre>
 
-<pre >## $names
-## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+<pre >#&gt; $names
+#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
 </article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos" class="build">
 
@@ -306,16 +298,16 @@ typeof(logico)</pre>
 <pre class = 'prettyprint lang-r'># Las funciones is.* y as.*  logical, integer, double, character, list
 is.character(caracter)</pre>
 
-<pre >## [1] TRUE</pre>
+<pre >#&gt; [1] TRUE</pre>
 
 <pre class = 'prettyprint lang-r'>as.integer(logico)</pre>
 
-<pre >## [1] 1 0 1</pre>
+<pre >#&gt; [1] 1 0 1</pre>
 
 <pre class = 'prettyprint lang-r'># Coerción por defecto:
 mean(logico)</pre>
 
-<pre >## [1] 0.6666667</pre>
+<pre >#&gt; [1] 0.6666667</pre>
 
 </article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos-1" class="build">
 
@@ -323,20 +315,20 @@ mean(logico)</pre>
 
 <pre class = 'prettyprint lang-r'>str(attributes(doble))</pre>
 
-<pre >## List of 1
-##  $ names: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+<pre >#&gt; List of 1
+#&gt;  $ names: chr [1:3] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>class(doble) # Se pueden modificar: class(doble) &lt;- &quot;myclass&quot;</pre>
 
-<pre >## [1] &quot;numeric&quot;</pre>
+<pre >#&gt; [1] &quot;numeric&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>names(doble)</pre>
 
-<pre >## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+<pre >#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>dim(doble)</pre>
 
-<pre >## NULL</pre>
+<pre >#&gt; NULL</pre>
 
 </article></slide><slide class=''><hgroup><h2>Datos faltantes y factores</h2></hgroup><article  id="datos-faltantes-y-factores" class="build left-margin">
 
@@ -350,21 +342,21 @@ NA_integer_; NA_real_; NA_character_;</pre>
 <pre class = 'prettyprint lang-r'>categoria &lt;- factor(x = c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;))
 typeof(categoria)</pre>
 
-<pre >## [1] &quot;integer&quot;</pre>
+<pre >#&gt; [1] &quot;integer&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>attributes(categoria)</pre>
 
-<pre >## $levels
-## [1] &quot;A&quot; &quot;B&quot;
-## 
-## $class
-## [1] &quot;factor&quot;</pre>
+<pre >#&gt; $levels
+#&gt; [1] &quot;A&quot; &quot;B&quot;
+#&gt; 
+#&gt; $class
+#&gt; [1] &quot;factor&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>table(categoria)</pre>
 
-<pre >## categoria
-## A B 
-## 3 2</pre>
+<pre >#&gt; categoria
+#&gt; A B 
+#&gt; 3 2</pre>
 
 </article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos" class="build left-margin">
 
@@ -374,18 +366,18 @@ arreglo &lt;- array(data = rnorm(24), c(2, 3, 4))
 dim(caracter) &lt;- c(1, 3)
 caracter</pre>
 
-<pre >##      [,1]   [,2]    [,3]
-## [1,] &quot;Hola&quot; &quot;mundo&quot; &quot;!&quot;</pre>
+<pre >#&gt;      [,1]   [,2]    [,3]
+#&gt; [1,] &quot;Hola&quot; &quot;mundo&quot; &quot;!&quot;</pre>
 
 <pre class = 'prettyprint lang-r'>str(arreglo)</pre>
 
-<pre >##  num [1:2, 1:3, 1:4] 1.822 1.376 -0.816 -0.851 0.707 ...</pre>
+<pre >#&gt;  num [1:2, 1:3, 1:4] -0.074 -0.14 0.829 0.27 -1.402 ...</pre>
 
 <pre class = 'prettyprint lang-r'>ncol(matriz); dim(arreglo)</pre>
 
-<pre >## [1] 2</pre>
+<pre >#&gt; [1] 2</pre>
 
-<pre >## [1] 2 3 4</pre>
+<pre >#&gt; [1] 2 3 4</pre>
 
 </article></slide><slide class=''><hgroup><h2>Matrices y arreglos</h2></hgroup><article  id="matrices-y-arreglos-1">
 
@@ -425,34 +417,34 @@ caracter</pre>
 <pre class = 'prettyprint lang-r'># Nada - util para más dimensiones
 doble[]</pre>
 
-<pre >##   a   b   c 
-## 1.0 2.5 4.5</pre>
+<pre >#&gt;   a   b   c 
+#&gt; 1.0 2.5 4.5</pre>
 
 <pre class = 'prettyprint lang-r'># Entero positivo
 doble[c(1, 2)]</pre>
 
-<pre >##   a   b 
-## 1.0 2.5</pre>
+<pre >#&gt;   a   b 
+#&gt; 1.0 2.5</pre>
 
 <pre class = 'prettyprint lang-r'># Entero negativo
 doble[-c(1, 2)]</pre>
 
-<pre >##   c 
-## 4.5</pre>
+<pre >#&gt;   c 
+#&gt; 4.5</pre>
 
 </article></slide><slide class=''><hgroup><h2>Subselección (indexación)</h2></hgroup><article  id="subseleccion-indexacion-1" class="build">
 
 <pre class = 'prettyprint lang-r'># Logico
 doble[doble &gt; 1]</pre>
 
-<pre >##   b   c 
-## 2.5 4.5</pre>
+<pre >#&gt;   b   c 
+#&gt; 2.5 4.5</pre>
 
 <pre class = 'prettyprint lang-r'># Caracter
 doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 
-<pre >##   a   c   c 
-## 1.0 4.5 4.5</pre>
+<pre >#&gt;   a   c   c 
+#&gt; 1.0 4.5 4.5</pre>
 
 <p>El operador <code>[</code> funciona igual en listas.</p>
 
@@ -462,20 +454,20 @@ doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 
 <pre class = 'prettyprint lang-r'>matriz</pre>
 
-<pre >##           [,1]      [,2]
-## [1,] 0.8368071 0.9414267
-## [2,] 0.2450987 0.6047859</pre>
+<pre >#&gt;           [,1]      [,2]
+#&gt; [1,] 0.6108810 0.3972853
+#&gt; [2,] 0.9125379 0.8424177</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[, c(TRUE, FALSE)]</pre>
 
-<pre >## [1] 0.8368071 0.2450987</pre>
+<pre >#&gt; [1] 0.6108810 0.9125379</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[1, , drop = FALSE]</pre>
 
-<pre >##           [,1]      [,2]
-## [1,] 0.8368071 0.9414267</pre>
+<pre >#&gt;          [,1]      [,2]
+#&gt; [1,] 0.610881 0.3972853</pre>
 
-</article></slide><slide class=''><hgroup><h2>Subseleccion</h2></hgroup><article  id="subseleccion-1">
+</article></slide><slide class=''><hgroup><h2>Subseleccion</h2></hgroup><article  id="subseleccion-1" class="build">
 
 <p>Hay dos operadores más para seleccionar. <code>[[</code> permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. <code>$</code> es un atajo para <code>[[</code> con un argumento caracter (nombres).</p>
 
@@ -483,49 +475,65 @@ doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 
 <pre class = 'prettyprint lang-r'>recursivo[[1]]</pre>
 
-<pre >## [1] 1 2 3</pre>
+<pre >#&gt; [1] 1 2 3</pre>
 
 <pre class = 'prettyprint lang-r'>recursivo$lista[[1]][3:5]</pre>
 
-<pre >## [1] 6 7 8</pre>
+<pre >#&gt; [1] 6 7 8</pre>
 
-</article></slide><slide class=''><hgroup><h2>El ubicuo <code class="build">data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame">
+<pre class = 'prettyprint lang-r'>subset(recursivo, c(FALSE, TRUE, FALSE))</pre>
+
+<pre >#&gt; $var
+#&gt; [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</pre>
+
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code> data.frame </code></h2></hgroup><article  id="el-ubicuo-data.frame" class="build">
 
 <p>Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).</p>
 
 <pre class = 'prettyprint lang-r'>(df &lt;- data.frame(x = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), y = 1:3))</pre>
 
-<pre >##   x y
-## 1 a 1
-## 2 b 2
-## 3 c 3</pre>
+<pre >#&gt;   x y
+#&gt; 1 a 1
+#&gt; 2 b 2
+#&gt; 3 c 3</pre>
 
 <pre class = 'prettyprint lang-r'>df[2, 2] # Se pueden seleccionar como en las matrices</pre>
 
-<pre >## [1] 2</pre>
+<pre >#&gt; [1] 2</pre>
 
 <pre class = 'prettyprint lang-r'>df$y[2] # Se pueden seleccionar como en las listas</pre>
 
-<pre >## [1] 2</pre>
+<pre >#&gt; [1] 2</pre>
 
-</article></slide><slide class=''><hgroup><h2>El ubicuo <code class="build">data.frame</code></h2></hgroup><article  id="el-ubicuo-data.frame-1">
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code> data.frame </code></h2></hgroup><article  id="el-ubicuo-data.frame-1" class="build">
 
 <p>Se pueden combinar dos o más <code>data.frame</code>s con las funciones <code>rbind()</code> y <code>cbind()</code></p>
 
 <pre class = 'prettyprint lang-r'>df1 &lt;- data.frame(x = c(&quot;a&quot;, &quot;b&quot;), y = 1:2)
-df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6, 7))
+df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;a&quot;), y = c(6, 7))
 
 (df &lt;- rbind(df1, df2))</pre>
 
-<pre >##   x y
-## 1 a 1
-## 2 b 2
-## 3 c 6
-## 4 d 7</pre>
+<pre >#&gt;   x y
+#&gt; 1 a 1
+#&gt; 2 b 2
+#&gt; 3 c 6
+#&gt; 4 a 7</pre>
 
 <p>La forma más comun de crearlo es con una variación de la función <code>read.table()</code></p>
 
-</article></slide><slide class=''><hgroup><h2>Funciones</h2></hgroup><article  id="funciones">
+</article></slide><slide class=''><hgroup><h2>El ubicuo <code> data.frame </code></h2></hgroup><article  id="el-ubicuo-data.frame-2" class="build">
+
+<p><code>subset()</code> con el <code>data.frame</code></p>
+
+<pre class = 'prettyprint lang-r'># df[df$x == &quot;a&quot;, &quot;y&quot;]
+subset(df, subset = x == &quot;a&quot;, select = y)</pre>
+
+<pre >#&gt;   y
+#&gt; 1 1
+#&gt; 4 7</pre>
+
+</article></slide><slide class=''><hgroup><h2>Funciones</h2></hgroup><article  id="funciones" class="build">
 
 <p>Las funciones tambien son objetos. Las creamos así:</p>
 
@@ -533,13 +541,128 @@ df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;d&quot;), y = c(6, 7))
   expresion ingeniosa o util
 }</pre>
 
+<h3>En R:</h3>
+
+<ul class = 'build'>
+<li>todo lo que existe es un objeto</li>
+<li>todo lo que pasa es un llamado a una función&quot;</li>
+</ul>
+
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2><a href='http://adv-r.had.co.nz/Vocabulary.html' title=''>Vocabulario</a></h2></hgroup><article  id="vocabulario">
 
-</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section" class="flexbox vcenter">
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Manipulación de datos con R moderno</h2></hgroup><article  id="manipulacion-de-datos-con-r-moderno">
 
-<img src='r-intro_files/waitwhat.jpeg' title=''/>
+</article></slide><slide class=''><hgroup><h2>R moderno o el <a href='https://barryrowlingson.github.io/hadleyverse/' title=''>&quot;Hadleyverse&quot;</a></h2></hgroup><article  id="r-moderno-o-el-hadleyverse" class="build">
 
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Manipulación de datos con el R moderno</h2></hgroup><article  id="manipulacion-de-datos-con-el-r-moderno">
+<ul class = 'build'>
+<li><code>readr</code> lectura de archivos.</li>
+<li><code>lubridate</code> manejo de fechas y tiempo.</li>
+<li><code>stringr</code> interface a <code>stringi</code> para manejo de caracteres.</li>
+<li><code>dplyr</code> y <code>tidyr</code> manipulación y limpieza de datos.</li>
+<li><code>ggplot2</code> una gramatica de graficas.</li>
+</ul>
+
+<p>Recordemos que <code>ìnstall.packages()</code> instala paquetes y <code>library()</code> los carga en la sesión.</p>
+
+</article></slide><slide class=''><hgroup><h2>Importación</h2></hgroup><article  id="importacion">
+
+<pre class = 'prettyprint lang-r'># Importar de un csv (Enfoque malo)
+dat &lt;- read.csv(&quot;./data/saber2014II.csv&quot;, sep = &quot;;&quot;, dec=&quot;,&quot;)
+# head(dat)
+
+# Importar de un csv (Enfoque correcto)
+clases &lt;- c(rep(&quot;character&quot;, 8), rep(&quot;numeric&quot;, 8), rep(&quot;NULL&quot;, 7), &quot;character&quot;)
+datos &lt;- read.csv(&quot;./data/saber2014II.csv&quot;, sep = &quot;;&quot;, dec=&quot;,&quot;, colClasses = clases)</pre>
+
+<pre class = 'prettyprint lang-r'>library(readr)
+datos &lt;- read_csv2(&quot;./data/saber2014II.csv&quot;)
+
+# Nuevo Paquete de Whickham para importar de excel
+library(readxl)
+saber &lt;- read_excel(&quot;./data/saber2014II.xlsx&quot;)
+
+# Importar de SPSS con etiquetas
+library(haven)
+saber &lt;- read_spss(&quot;./data/saber2014II.sav&quot;)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion">
+
+<h3>Verbos de <code>dplyr</code></h3>
+
+<ul class = 'build'>
+<li><code>filter()</code></li>
+<li><code>arrange()</code></li>
+<li><code>select()</code></li>
+<li><code>mutate()</code> y <code>transmute()</code></li>
+<li><code>summarise()</code></li>
+<li><code>group_by()</code></li>
+<li><code>*_join()</code></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion-1" class="build">
+
+<p>Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.</p>
+
+<pre class = 'prettyprint lang-r'>library(dplyr)
+resumen_a &lt;- datos %&gt;%
+  group_by(NOMBREMUNICIPIO) %&gt;%
+  summarize(DEPARTAMENTO = max(DEPARTAMENTO), TOTAL_EVALUADOS = sum(EVALUADOS)) %&gt;%
+  arrange(desc(TOTAL_EVALUADOS)) %&gt;%
+  mutate(ranking = row_number()) %&gt;%
+  select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, TOTAL_EVALUADOS)</pre>
+
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion">
+
+<pre class = 'prettyprint lang-r'>resumen_a</pre>
+
+<pre >#&gt; Source: local data frame [1,022 x 4]
+#&gt; 
+#&gt;    ranking    DEPARTAMENTO NOMBREMUNICIPIO TOTAL_EVALUADOS
+#&gt; 1        1          BOGOTA     BOGOTÁ D.C.           92799
+#&gt; 2        2       ANTIOQUIA        MEDELLIN           30185
+#&gt; 3        3           VALLE            CALI           18809
+#&gt; 4        4       ATLANTICO    BARRANQUILLA           15728
+#&gt; 5        5         BOLIVAR       CARTAGENA           12770
+#&gt; 6        6 NORTE SANTANDER          CUCUTA            9075
+#&gt; 7        7       SANTANDER     BUCARAMANGA            7540
+#&gt; 8        8          TOLIMA          IBAGUE            7487
+#&gt; 9        9    CUNDINAMARCA          SOACHA            6979
+#&gt; 10      10            META   VILLAVICENCIO            6212
+#&gt; ..     ...             ...             ...             ...</pre>
+
+</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion-2" class="build">
+
+<p>Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?</p>
+
+<pre class = 'prettyprint lang-r'>resumen_b &lt;- datos %&gt;%
+  mutate(PROMGLOBAL = (PROMMATEMATICA + PROMINGLES + PROMLECTURACRITICA + 
+                       PROMSOCIALESYCIUDADANAS +  PROMCIENCIASNATURALES + 
+                       PROMRAZONAMIENTOCUANTITA + PROMCOMPETENCIASCIUDADAN)/7) %&gt;%
+  group_by(NOMBREMUNICIPIO) %&gt;%
+  summarize(DEPARTAMENTO = max(DEPARTAMENTO), 
+            PROMGLOBALXMPIO = sum(PROMGLOBAL * EVALUADOS) / sum(EVALUADOS)) %&gt;%
+  arrange(desc(PROMGLOBALXMPIO)) %&gt;%
+  mutate(ranking = row_number()) %&gt;%
+  select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, PROMGLOBALXMPIO) </pre>
+
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-1">
+
+<pre class = 'prettyprint lang-r'>resumen_b</pre>
+
+<pre >#&gt; Source: local data frame [1,022 x 4]
+#&gt; 
+#&gt;    ranking DEPARTAMENTO NOMBREMUNICIPIO PROMGLOBALXMPIO
+#&gt; 1        1 CUNDINAMARCA            COTA        60.95414
+#&gt; 2        2    ANTIOQUIA          RETIRO        58.63083
+#&gt; 3        3 CUNDINAMARCA           TENJO        58.02804
+#&gt; 4        4       BOYACA           PAIPA        55.98362
+#&gt; 5        5    ANTIOQUIA        SABANETA        55.73571
+#&gt; 6        6 CUNDINAMARCA       LA CALERA        55.54639
+#&gt; 7        7 CUNDINAMARCA            CHIA        55.43881
+#&gt; 8        8    ANTIOQUIA        ENVIGADO        55.32838
+#&gt; 9        9       BOYACA         DUITAMA        55.04629
+#&gt; 10      10 CUNDINAMARCA      SUBACHOQUE        54.97549
+#&gt; ..     ...          ...             ...             ...</pre>
 
 </article></slide><slide class=''><hgroup><h2>Ayuda para ir más allá</h2></hgroup><article  id="ayuda-para-ir-mas-alla" class="build">
 
