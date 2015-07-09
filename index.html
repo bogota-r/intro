@@ -371,7 +371,7 @@ caracter</pre>
 
 <pre class = 'prettyprint lang-r'>str(arreglo)</pre>
 
-<pre >#&gt;  num [1:2, 1:3, 1:4] -0.074 -0.14 0.829 0.27 -1.402 ...</pre>
+<pre >#&gt;  num [1:2, 1:3, 1:4] 2.21 1.317 -1.09 -0.145 -0.389 ...</pre>
 
 <pre class = 'prettyprint lang-r'>ncol(matriz); dim(arreglo)</pre>
 
@@ -455,17 +455,17 @@ doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 <pre class = 'prettyprint lang-r'>matriz</pre>
 
 <pre >#&gt;           [,1]      [,2]
-#&gt; [1,] 0.6108810 0.3972853
-#&gt; [2,] 0.9125379 0.8424177</pre>
+#&gt; [1,] 0.9879446 0.5293030
+#&gt; [2,] 0.9752567 0.7605836</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[, c(TRUE, FALSE)]</pre>
 
-<pre >#&gt; [1] 0.6108810 0.9125379</pre>
+<pre >#&gt; [1] 0.9879446 0.9752567</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[1, , drop = FALSE]</pre>
 
-<pre >#&gt;          [,1]      [,2]
-#&gt; [1,] 0.610881 0.3972853</pre>
+<pre >#&gt;           [,1]     [,2]
+#&gt; [1,] 0.9879446 0.529303</pre>
 
 </article></slide><slide class=''><hgroup><h2>Subseleccion</h2></hgroup><article  id="subseleccion-1" class="build">
 
@@ -526,7 +526,13 @@ df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;a&quot;), y = c(6, 7))
 
 <p><code>subset()</code> con el <code>data.frame</code></p>
 
-<pre class = 'prettyprint lang-r'># df[df$x == &quot;a&quot;, &quot;y&quot;]
+<pre class = 'prettyprint lang-r'>df[df$x == &quot;a&quot;, &quot;y&quot;, drop = FALSE]</pre>
+
+<pre >#&gt;   y
+#&gt; 1 1
+#&gt; 4 7</pre>
+
+<pre class = 'prettyprint lang-r'># Mejor así:
 subset(df, subset = x == &quot;a&quot;, select = y)</pre>
 
 <pre >#&gt;   y
@@ -585,7 +591,7 @@ saber &lt;- read_excel(&quot;./data/saber2014II.xlsx&quot;)
 library(haven)
 saber &lt;- read_spss(&quot;./data/saber2014II.sav&quot;)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion">
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion">
 
 <h3>Verbos de <code>dplyr</code></h3>
 
@@ -599,7 +605,7 @@ saber &lt;- read_spss(&quot;./data/saber2014II.sav&quot;)</pre>
 <li><code>*_join()</code></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion-1" class="build">
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-1" class="build">
 
 <p>Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.</p>
 
@@ -611,7 +617,7 @@ resumen_a &lt;- datos %&gt;%
   mutate(ranking = row_number()) %&gt;%
   select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, TOTAL_EVALUADOS)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion">
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-2">
 
 <pre class = 'prettyprint lang-r'>resumen_a</pre>
 
@@ -630,7 +636,7 @@ resumen_a &lt;- datos %&gt;%
 #&gt; 10      10            META   VILLAVICENCIO            6212
 #&gt; ..     ...             ...             ...             ...</pre>
 
-</article></slide><slide class=''><hgroup><h2>Manipulacion</h2></hgroup><article  id="manipulacion-2" class="build">
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-3" class="build">
 
 <p>Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?</p>
 
@@ -645,7 +651,7 @@ resumen_a &lt;- datos %&gt;%
   mutate(ranking = row_number()) %&gt;%
   select(ranking, DEPARTAMENTO, NOMBREMUNICIPIO, PROMGLOBALXMPIO) </pre>
 
-</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-1">
+</article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-4">
 
 <pre class = 'prettyprint lang-r'>resumen_b</pre>
 
