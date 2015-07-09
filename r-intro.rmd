@@ -171,7 +171,7 @@ attributes(doble)
 
 ## Propiedades, clases y atributos  {.build}
 
-### Tipos, pruebas y coreción
+### Tipos, pruebas y coerción
 
 ```{r}
 # Las funciones is.* y as.*  logical, integer, double, character, list

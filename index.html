@@ -25,7 +25,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Introducción a <strong>R</strong>',
+                title: 'Introducción a R',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -134,7 +134,7 @@
 
 <ul class = 'build'>
 <li>Una gran comunidad mundial.</li>
-<li>El laboratorio de <strong>muchos</strong> estadísticos y &quot;científicos de datos&quot;.</li>
+<li>El laboratorio de <strong>muchos</strong> estadísticos y científicos de datos.</li>
 <li>El principal medio para el desarrollo y la <a href='http://journal.r-project.org/' title=''>divulgación</a> de técnicas estadísticas y de análisis de datos de vanguardia.</li>
 <li>Jhon Chambers, miembro del equipo de R y co-autor de S, el lenguaje del cual se deriva R, lo describe como una <a href='https://www.youtube.com/watch?v=_hcpuRB5nGs' title=''><strong>interfaz</strong></a>: un portal a todo tipo de herramientas/algoritmos.</li>
 </ul>
@@ -167,7 +167,7 @@
 <ul class = 'build'>
 <li>En Windows y Mac R viene con un GUI</li>
 <li>IDE: <a href='www.rstudio.com' title=''>RStudio</a></li>
-<li>R Commander <a href='http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/' title=''>Rcmdr</a> un GUI para R con funcionalidades estadísticas basicas.</li>
+<li>R Commander <a href='http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/' title=''>Rcmdr</a> un GUI para R con funcionalidades estadísticas básicas.</li>
 </ul>
 
 <p>Igualmente Emacs y Vim tienen plugins:</p>
@@ -179,7 +179,9 @@
 
 </article></slide><slide class=''><hgroup><h2>Ayuda para empezar</h2></hgroup><article  id="ayuda-para-empezar" class="build">
 
-<p>Por donde empezar? Desde R:</p>
+<p>Por dónde empezar?</p>
+
+<p>Desde R:</p>
 
 <pre class = 'prettyprint lang-r'>help.start()</pre>
 
@@ -214,7 +216,7 @@ y^y / 10*pi + 1    # Expresión</pre>
 
 <pre class = 'prettyprint lang-r'>y &lt;- 2 + 2    # Asignación</pre>
 
-<p><code>matrix()</code> es una función, entre parentesis van sus argumentos (los podemos especificar por posición, por nombre o por <strong>omisión</strong>).</p>
+<p><code>matrix()</code> es una función, entre paréntesis van sus argumentos (los podemos especificar por posición, por nombre o por <strong>omisión</strong>).</p>
 
 <pre class = 'prettyprint lang-r'>matrix(data = 1, y/2, y)</pre>
 
@@ -228,7 +230,7 @@ y^y / 10*pi + 1    # Expresión</pre>
 
 </article></slide><slide class=''><hgroup><h2>Estructuras de datos</h2></hgroup><article  id="estructuras-de-datos" class="build left-margin">
 
-<h3>Vectores atomicos</h3>
+<h3>Vectores atómicos</h3>
 
 <pre class = 'prettyprint lang-r'>logico   &lt;- c(TRUE, FALSE, T)
 entero   &lt;- c(1L, 6L, 10L)
@@ -293,7 +295,7 @@ typeof(logico)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Propiedades, clases y atributos</h2></hgroup><article  id="propiedades-clases-y-atributos" class="build">
 
-<h3>Tipos, pruebas y coreción</h3>
+<h3>Tipos, pruebas y coerción</h3>
 
 <pre class = 'prettyprint lang-r'># Las funciones is.* y as.*  logical, integer, double, character, list
 is.character(caracter)</pre>
@@ -332,12 +334,12 @@ mean(logico)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Datos faltantes y factores</h2></hgroup><article  id="datos-faltantes-y-factores" class="build left-margin">
 
-<p>Hay una constante logica para especificar datos faltantes. La función <code>ìs.na()</code> evalua si hay datos faltantes.</p>
+<p>Hay una constante lógica para especificar datos faltantes. La función <code>is.na()</code> evalua si hay datos faltantes.</p>
 
 <pre class = 'prettyprint lang-r'>NA # logico
 NA_integer_; NA_real_; NA_character_;</pre>
 
-<p>La clase factor se usa para representar variables categoricas.</p>
+<p>La clase factor se usa para representar variables categóricas.</p>
 
 <pre class = 'prettyprint lang-r'>categoria &lt;- factor(x = c(&quot;A&quot;, &quot;B&quot;, &quot;A&quot;, &quot;A&quot;, &quot;B&quot;))
 typeof(categoria)</pre>
@@ -371,7 +373,7 @@ caracter</pre>
 
 <pre class = 'prettyprint lang-r'>str(arreglo)</pre>
 
-<pre >#&gt;  num [1:2, 1:3, 1:4] -1.054 -0.995 0.331 0.571 1.643 ...</pre>
+<pre >#&gt;  num [1:2, 1:3, 1:4] 0.621 0.674 1.429 1.052 -1.417 ...</pre>
 
 <pre class = 'prettyprint lang-r'>ncol(matriz); dim(arreglo)</pre>
 
@@ -414,7 +416,7 @@ caracter</pre>
 
 <p>Para empezar el operador <code>[</code></p>
 
-<pre class = 'prettyprint lang-r'># Nada - util para más dimensiones
+<pre class = 'prettyprint lang-r'># Nada - útil para más dimensiones
 doble[]</pre>
 
 <pre >#&gt;   a   b   c 
@@ -434,7 +436,7 @@ doble[-c(1, 2)]</pre>
 
 </article></slide><slide class=''><hgroup><h2>Subselección (indexación)</h2></hgroup><article  id="subseleccion-indexacion-1" class="build">
 
-<pre class = 'prettyprint lang-r'># Logico
+<pre class = 'prettyprint lang-r'># Lógico
 doble[doble &gt; 1]</pre>
 
 <pre >#&gt;   b   c 
@@ -455,23 +457,23 @@ doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 <pre class = 'prettyprint lang-r'>matriz</pre>
 
 <pre >#&gt;           [,1]      [,2]
-#&gt; [1,] 0.1581809 0.6899701
-#&gt; [2,] 0.3773841 0.4984879</pre>
+#&gt; [1,] 0.4272734 0.7769284
+#&gt; [2,] 0.4694986 0.9122391</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[, c(TRUE, FALSE)]</pre>
 
-<pre >#&gt; [1] 0.1581809 0.3773841</pre>
+<pre >#&gt; [1] 0.4272734 0.4694986</pre>
 
 <pre class = 'prettyprint lang-r'>matriz[1, , drop = FALSE]</pre>
 
 <pre >#&gt;           [,1]      [,2]
-#&gt; [1,] 0.1581809 0.6899701</pre>
+#&gt; [1,] 0.4272734 0.7769284</pre>
 
-</article></slide><slide class=''><hgroup><h2>Subseleccion</h2></hgroup><article  id="subseleccion-1" class="build">
+</article></slide><slide class=''><hgroup><h2>Subselección</h2></hgroup><article  id="subseleccion-1" class="build">
 
-<p>Hay dos operadores más para seleccionar. <code>[[</code> permite seleccionar solo un valor (entero positivo o caracter), pero los extrae de las listas. <code>$</code> es un atajo para <code>[[</code> con un argumento caracter (nombres).</p>
+<p>Hay dos operadores más para seleccionar. <code>[[</code> permite seleccionar sólo un valor (entero positivo o caracter), pero los extrae de las listas. <code>$</code> es un atajo para <code>[[</code> con un argumento caracter (nombres).</p>
 
-<p>Además esta la función <code>subset()</code> para seleccionar de forma más limpia con condiciones logicas.</p>
+<p>Además esta la función <code>subset()</code> para seleccionar de forma más limpia con condiciones lógicas.</p>
 
 <pre class = 'prettyprint lang-r'>recursivo[[1]]</pre>
 
@@ -488,7 +490,7 @@ doble[c(&quot;a&quot;, &quot;c&quot;, &quot;c&quot;)]</pre>
 
 </article></slide><slide class=''><hgroup><h2>El ubicuo <code> data.frame </code></h2></hgroup><article  id="el-ubicuo-data.frame" class="build">
 
-<p>Es la estructura de datos más utilizada en R. Es una lista de vectores atomicos (!?!).</p>
+<p>Es la estructura de datos más utilizada en R. Es una lista de vectores atómicos (!?!).</p>
 
 <pre class = 'prettyprint lang-r'>(df &lt;- data.frame(x = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), y = 1:3))</pre>
 
@@ -520,7 +522,7 @@ df2 &lt;- data.frame(x = c(&quot;c&quot;, &quot;a&quot;), y = c(6, 7))
 #&gt; 3 c 6
 #&gt; 4 a 7</pre>
 
-<p>La forma más comun de crearlo es con una variación de la función <code>read.table()</code></p>
+<p>La forma más común de crearlo es con una variación de la función <code>read.table()</code></p>
 
 </article></slide><slide class=''><hgroup><h2>El ubicuo <code> data.frame </code></h2></hgroup><article  id="el-ubicuo-data.frame-2" class="build">
 
@@ -541,7 +543,7 @@ subset(df, subset = x == &quot;a&quot;, select = y)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Funciones</h2></hgroup><article  id="funciones" class="build">
 
-<p>Las funciones tambien son objetos. Las creamos así:</p>
+<p>Las funciones también son objetos. Las creamos así:</p>
 
 <pre class = 'prettyprint lang-r'>miFuncion &lt;- function(arg_1, arg_2, ...){
   expresion ingeniosa o util
@@ -551,7 +553,7 @@ subset(df, subset = x == &quot;a&quot;, select = y)</pre>
 
 <ul class = 'build'>
 <li>todo lo que existe es un objeto</li>
-<li>todo lo que pasa es un llamado a una función&quot;</li>
+<li>todo lo que se pasa en la consola es un llamado a una función</li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2><a href='http://adv-r.had.co.nz/Vocabulary.html' title=''>Vocabulario</a></h2></hgroup><article  id="vocabulario">
@@ -565,10 +567,10 @@ subset(df, subset = x == &quot;a&quot;, select = y)</pre>
 <li><code>lubridate</code> manejo de fechas y tiempo.</li>
 <li><code>stringr</code> interface a <code>stringi</code> para manejo de caracteres.</li>
 <li><code>dplyr</code> y <code>tidyr</code> manipulación y limpieza de datos.</li>
-<li><code>ggplot2</code> una gramatica de graficas.</li>
+<li><code>ggplot2</code> una gramática de gráficas.</li>
 </ul>
 
-<p>Recordemos que <code>ìnstall.packages()</code> instala paquetes y <code>library()</code> los carga en la sesión.</p>
+<p>Recordemos que <code>install.packages()</code> instala paquetes y <code>library()</code> los carga en la sesión.</p>
 
 </article></slide><slide class=''><hgroup><h2>Importación</h2></hgroup><article  id="importacion">
 
@@ -583,7 +585,7 @@ datos &lt;- read.csv(&quot;./data/saber2014II.csv&quot;, sep = &quot;;&quot;, de
 <pre class = 'prettyprint lang-r'>library(readr)
 datos &lt;- read_csv2(&quot;./data/saber2014II.csv&quot;)
 
-# Nuevo Paquete de Whickham para importar de excel
+# Nuevo Paquete de Whickham para importar de Excel
 library(readxl)
 saber &lt;- read_excel(&quot;./data/saber2014II.xlsx&quot;)
 
@@ -607,7 +609,7 @@ saber &lt;- read_spss(&quot;./data/saber2014II.sav&quot;)</pre>
 
 </article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-1" class="build">
 
-<p>Calculemos cuantos estudiantes presentaron las pruebas saber en el año 2014 por municipio.</p>
+<p>Pregunta: ¿cuántos estudiantes presentaron las pruebas Saber en el año 2014 por municipio?</p>
 
 <pre class = 'prettyprint lang-r'>library(dplyr)
 resumen_a &lt;- datos %&gt;%
@@ -638,7 +640,7 @@ resumen_a &lt;- datos %&gt;%
 
 </article></slide><slide class=''><hgroup><h2>Manipulación</h2></hgroup><article  id="manipulacion-3" class="build">
 
-<p>Pregunta: ¿Cuál es el municipio de mejor desempeño del país en las pruebas saber?</p>
+<p>Pregunta: ¿cuál es el municipio de mejor desempeño del país en las pruebas saber?</p>
 
 <pre class = 'prettyprint lang-r'>resumen_b &lt;- datos %&gt;%
   mutate(PROMGLOBAL = (PROMMATEMATICA + PROMINGLES + PROMLECTURACRITICA + 
@@ -672,9 +674,9 @@ resumen_a &lt;- datos %&gt;%
 
 </article></slide><slide class=''><hgroup><h2>Ayuda para ir más allá</h2></hgroup><article  id="ayuda-para-ir-mas-alla" class="build">
 
-<p>En el <a href='http://www.cran.r-project.org' title=''>CRAN</a> hay una <a href='http://cran.r-project.org/web/views/' title=''><em>Vista de Tareas</em></a> que sobrevuela paquetes, funciones y referencias para completar tareas especificas agrupadas tematicamente.</p>
+<p>En el <a href='http://www.cran.r-project.org' title=''>CRAN</a> hay una <a href='http://cran.r-project.org/web/views/' title=''><em>Vista de Tareas</em></a> que sobrevuela paquetes, funciones y referencias para completar tareas específicas agrupadas temáticamente.</p>
 
-<p>Canales: <a href='https://twitter.com/hashtag/rstats' title=''>en twitter #rstats</a> y en <a href='http://stackoverflow.com/questions/tagged/r' title=''>StackOverflow el tag R</a>. Tambien pueden <a href='https://www.google.com.co/#q=R' title=''>googlea-R</a> R + &quot;pregunta&quot;.</p>
+<p>Canales: <a href='https://twitter.com/hashtag/rstats' title=''>en twitter #rstats</a> y en <a href='http://stackoverflow.com/questions/tagged/r' title=''>StackOverflow el tag R</a>. También pueden <a href='https://www.google.com.co/#q=R' title=''>googlea-R</a> R + &quot;pregunta&quot;.</p>
 
 <p>Algunas buenas referencias:</p>
 
@@ -682,11 +684,11 @@ resumen_a &lt;- datos %&gt;%
 <li><a href='http://www.statmethods.net/' title=''>Quick R</a></li>
 <li><a href='http://adv-r.had.co.nz/' title=''>Advanced R</a></li>
 <li><a href='http://www.burns-stat.com/pages/Tutor/R_inferno.pdf' title=''>The R Inferno</a> un viaje dantesco por R</li>
-<li><a href='http://www.springer.com/series/6991?detailsPage=titles' title=''>Springer - Use R Series</a> R en la practica en diferentes contextos.</li>
+<li><a href='http://www.springer.com/series/6991?detailsPage=titles' title=''>Springer - Use R Series</a> R en la práctica en diferentes contextos.</li>
 <li>&#8230;</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Colofón</h2></hgroup><article  id="colofon" class="smaller">
+</article></slide><slide class=''><hgroup><h2>Colofón</h2></hgroup><article  id="colofon" class="smaller left-margin">
 
 <p>Esta presentación fue escrita en RMarkdown desde RStudio y compilada por <code>rmarkdown</code> en la plantilla <code>ioslides</code> de Google gracias a <code>knitr</code> y <code>pandoc</code>. Publicada en la web en GitHub gracias a GitHub Pages.</p></article></slide>
 
