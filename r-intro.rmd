@@ -61,7 +61,7 @@ En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homeb
 
         brew install homebrew/science/r
 
-## Empezando con R {.build}
+## Empezando con R
 
 <div class="videowrapper">
   <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -74,7 +74,7 @@ Aprender a usar R puede ser (muy) frustrante.
 Interfaces:
 
 - En Windows y Mac R viene con un GUI
-- IDE: [RStudio](www.rstudio.com)
+- IDE: [RStudio](https://www.rstudio.com)
 - R Commander [Rcmdr](http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/)
   un GUI para R con funcionalidades estadísticas básicas.
 
