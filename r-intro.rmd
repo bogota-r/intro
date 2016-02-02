@@ -74,7 +74,7 @@ Aprender a usar R puede ser (muy) frustrante.
 Interfaces:
 
 - En Windows y Mac R viene con un GUI
-- IDE: [RStudio](https://www.rstudio.com)
+- IDE: [RStudio](www.rstudio.com)
 - R Commander [Rcmdr](http://socserv.socsci.mcmaster.ca/jfox/Misc/Rcmdr/)
   un GUI para R con funcionalidades estadísticas básicas.
 
@@ -444,4 +444,9 @@ Algunas buenas referencias:
 
 ## Colofón {.smaller .left-margin}
 
-Esta presentación fue escrita en RMarkdown desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a `knitr` y `pandoc`. Publicada en la web en GitHub gracias a GitHub Pages.
+Esta presentación fue escrita en [RMarkdown](http://rmarkdown.rstudio.com/) desde RStudio y compilada por `rmarkdown` en la plantilla `ioslides` de Google gracias a [`knitr`](http://yihui.name/knitr/) y [`pandoc`](http://pandoc.org/). Publicada en la web en [GitHub](https://github.com/bogota-r/intro) gracias a [GitHub Pages](https://pages.github.com/).
+
+La presentación fue preparada por por Daniel Moreno, Adriana Clavijo y Jose Zea para el [Grupo de Usuarios de R de Bogotá](http://www.meetup.com/Bogota-R-Users-Group/) y el contenido original esta bajo la licensia [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/).
+
+
+[![CC BY](http://i.creativecommons.org/l/by/3.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/ "CC-BY-4.0")
