@@ -12,11 +12,13 @@ knitr::opts_chunk$set(message = FALSE, comment = "#>")
 
 ### **El software estadístico más poderoso y usado en el mundo**
 
+<!--html_preserve-->
 <br>
 
 <div class="videowrapper">
   <iframe src="https://www.youtube.com/embed/NZPHiYP7I24?cc_load_policy=1&cc_lang_pref=es" frameborder="0" allowfullscreen></iframe>
 </div>
+<!--/html_preserve-->
 
 ## [Qué es R?](http://www.r-project.org/about.html)
 
@@ -63,9 +65,11 @@ En Mac también se puede instalar R con [brew](https://github.com/Homebrew/homeb
 
 ## Empezando con R
 
+<!--html_preserve-->
 <div class="videowrapper">
   <iframe src="http://giphy.com/embed/nkLB4Gp8H6hFe?html5=true" width="40" height="22.5" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 </div>
+<!--/html_preserve-->
 
 ## Setup
 
